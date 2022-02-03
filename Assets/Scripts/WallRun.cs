@@ -48,7 +48,8 @@ public class WallRun : MonoBehaviour
         wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
         wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance);
     }
-private void Update()
+
+    private void Update()
     {
         CheckWall();
 
@@ -56,19 +57,13 @@ private void Update()
         {
             if (wallLeft)
             {
-                if (leftWallHit.transform.tag == "Wall run")
-                {
-                    StartWallRun();
-                    
-                }
+                StartWallRun();
+                Debug.Log("wall running on the left");
             }
             else if (wallRight)
             {
-                if (rightWallHit.transform.tag == "Wall run")
-                {
-                    StartWallRun();
-                    
-                }
+                StartWallRun();
+                Debug.Log("wall running on the right");
             }
             else
             {

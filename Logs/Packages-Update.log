@@ -45,3 +45,16 @@ The following packages were added:
   com.unity.timeline@1.5.6
   com.unity.ugui@1.0.0
   com.unity.visualscripting@1.6.1
+
+=== Thu Feb  3 19:12:21 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.7.1 to 1.15.7
+  com.unity.ide.rider from version 3.0.7 to 3.0.9
+  com.unity.render-pipelines.universal from version 11.0.0 to 12.1.4
+  com.unity.test-framework from version 1.1.27 to 1.1.29
+  com.unity.timeline from version 1.5.6 to 1.6.3
+  com.unity.visualscripting from version 1.6.1 to 1.7.6
