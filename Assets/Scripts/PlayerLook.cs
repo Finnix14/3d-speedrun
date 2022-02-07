@@ -40,4 +40,20 @@ public class PlayerLook : MonoBehaviour
         cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, wallRun.tilt);
         orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
+
+    private void CheckForShooting()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit WhatIHit;
+            if(Physics.Raycast(transform.position, transform.forward, out WhatIHit, Mathf.Infinity))
+            {
+                IDamegeable damegable = WhatIHit.collider.GetComponent<IDamegeable>();
+                if (damegable != null)
+                {
+                    damegable.DealDamage(10);
+                }
+            }
+        }
+    }
 }
