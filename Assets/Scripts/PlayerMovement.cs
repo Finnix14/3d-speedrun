@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     float playerHeight = 2f;
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jumping")]
     public float jumpForce = 5f;
+
+
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
@@ -40,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 moveDirection;
     Vector3 slopeMoveDirection;
+
+    Animator anim;
 
     Rigidbody rb;
 
@@ -64,7 +69,9 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         rb.freezeRotation = true;
+      
     }
 
     private void Update()
@@ -104,11 +111,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(sprintKey) && isGrounded)
         {
+
+            anim.SetBool ("sprint", true);
             moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
+            
         }
         else
         {
             moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, acceleration * Time.deltaTime);
+            anim.SetBool("sprint", false);
         }
     }
 
