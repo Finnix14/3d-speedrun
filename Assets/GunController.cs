@@ -4,7 +4,7 @@ using System.Collections;
 public class GunController : MonoBehaviour
 {
 
-    //public int gunDamage = 1;
+    public int gunDamage = 1;
     public float fireRate = 0.25f;
     public float weaponRange = 50f;
     public float hitForce = 100f;
@@ -15,6 +15,7 @@ public class GunController : MonoBehaviour
     private AudioSource gunAudio;
     private LineRenderer laserLine;
     private float nextFire;
+    Animator anim;
 
     // Use this for initialization
     void Start()
@@ -24,6 +25,9 @@ public class GunController : MonoBehaviour
         gunAudio = GetComponent<AudioSource>();
 
         fpsCam = GetComponentInParent<Camera>();
+
+        anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -44,12 +48,7 @@ public class GunController : MonoBehaviour
             if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
             {
                 laserLine.SetPosition(1, hit.point);
-                //ShootableBox health = hit.collider.GetComponent<ShootableBox>();
-
-                //if (health != null)
-                //{
-                //    health.Damage(gunDamage);
-                //}
+     
 
                 if (hit.rigidbody != null)
                 {
