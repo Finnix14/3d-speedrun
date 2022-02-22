@@ -115,15 +115,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(sprintKey) && isGrounded)
         {
-
-            anim.SetBool ("sprint", true);
+            if (isGrounded)
+            {
+                anim.SetBool("sprint", true);
+            }
+            
             moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
             
         }
         else
         {
             moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, acceleration * Time.deltaTime);
-            anim.SetBool("sprint", false);
+            if (isGrounded)
+            {
+                anim.SetBool("sprint", false);
+            }
+            
         }
     }
 

@@ -33,8 +33,10 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        if (Input.GetMouseButton(0) && Time.time > nextFire)
         {
+
+
             nextFire = Time.time + fireRate;
 
             StartCoroutine(ShotEffect());

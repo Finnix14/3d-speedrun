@@ -5,43 +5,50 @@ using UnityEngine;
 public class Slide : MonoBehaviour
 {
     Rigidbody rig;
-    CapsuleCollider collider;
+    CapsuleCollider col;
     Animator anim;
     Camera cam;
-
+    public PlayerMovement player;
     float originalHeight;
     public float reducedHeight;
 
     public float slideSpeed ;
 
     bool isSliding;
+
+    
     void Start()
     {
-        collider = GetComponent<CapsuleCollider>();
+        col = GetComponent<CapsuleCollider>();
         rig = GetComponent<Rigidbody>();
-        originalHeight = collider.height;
+        originalHeight = col.height;
         anim = GetComponent<Animator>();
+        player = GetComponent <PlayerMovement>();
+
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl)&& player.isGrounded)
             Sliding();
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        else if (Input.GetKeyUp(KeyCode.LeftControl)&& isSliding)
             GoUp();
     }
 
     private void Sliding()
     {
-        anim.SetBool ("slide", true);
-        collider.height = reducedHeight;
+        
+        
+        col.height = reducedHeight;
         rig.AddForce(Camera.main.transform.forward * slideSpeed, ForceMode.VelocityChange);
+        isSliding = true;
     }
 
     private void GoUp()
     {
-        collider.height = originalHeight;
-        anim.SetBool("slide", false);
+        col.height = originalHeight;
+        
+        isSliding = false;
     }
 }
 
