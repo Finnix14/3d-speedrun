@@ -4,45 +4,74 @@ using UnityEngine;
 
 public class Zipline : MonoBehaviour
 {
-    public float Go = 100f;
-    public float range = 3f;
+    [SerializeField] private Zipline targetZip;
+    [SerializeField] private float ZipSpeed = 5f;
+    [SerializeField] private float ZipScale = 0.2f;
+    
+    [SerializeField] private float arrivalThreshold = 0.4f;
+    [SerializeField] private LineRenderer cable;
+    
+    public Transform ZipTransform;
 
-    public GameObject zipline;
-    public bool isMoving = false;
+    private bool zipping = false;
+    private GameObject localzip;
 
-    public Camera fpsCam;
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown("e"))
-        {
-            Shoot();
-        }
+        cable.SetPosition(0, ZipTransform.position);
+        cable.SetPosition(1, ZipTransform.position);
     }
 
-    void Shoot()
+   
+   
+    private void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        {
-            Debug.Log(hit.transform.name);
+        if ((!zipping || localzip == null)) return;
 
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
-            {
-                StartCoroutine(ZiplineGo());
-            }
+        GetComponent<Rigidbody>().AddForce((targetZip.ZipTransform.position - ZipTransform.position).normalized * ZipSpeed * Time.deltaTime, ForceMode.Acceleration);
+
+        if (Vector3.Distance(localzip.transform.position, targetZip.transform.position) <= arrivalThreshold)
+        {
+            ResetZipline();
         }
     }
-
-    IEnumerator ZiplineGo()
+    
+    public void StartZipline(GameObject player)
     {
-        isMoving = true;
-        zipline.GetComponent<Animator>().Play("Zipline");
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(10f);
-        zipline.GetComponent<Animator>().Play("New State");
-        isMoving = false;
+        if (zipping) return;
+
+        localzip = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        localzip.transform.position = ZipTransform.position;
+        localzip.transform.localScale = new Vector3(ZipScale, ZipScale, ZipScale);
+        localzip.AddComponent<Rigidbody>().useGravity = false ;
+        localzip.AddComponent<Collider>().isTrigger = true ;
+
+        player.GetComponent<Rigidbody>().useGravity = false;
+        player.GetComponent<Rigidbody>().isKinematic = true;
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.transform.parent = localzip.transform;
+        zipping = true;
+    }
+
+    private void ResetZipline()
+    {
+        if (!zipping) return;
+        
+        GameObject player = localzip.transform.GetChild(0).gameObject;
+
+        player.GetComponent<Rigidbody>().useGravity = false;
+        player.GetComponent<Rigidbody>().isKinematic = true;
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.transform.parent = null;
+        Destroy(localzip);
+        zipping = false;
+        localzip = null;
+        Debug.Log("Zipline Reset");
+
+       
     }
 }
