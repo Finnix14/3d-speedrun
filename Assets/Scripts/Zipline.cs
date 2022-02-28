@@ -44,7 +44,7 @@ public class Zipline : MonoBehaviour
         localzip.transform.position = ZipTransform.position;
         localzip.transform.localScale = new Vector3(ZipScale, ZipScale, ZipScale);
         localzip.AddComponent<Rigidbody>().useGravity = false ;
-        localzip.AddComponent<Collider>().isTrigger = true ;
+        //localzip.AddComponent<Collider>().isTrigger = true ;
 
         player.GetComponent<Rigidbody>().useGravity = false;
         player.GetComponent<Rigidbody>().isKinematic = true;
