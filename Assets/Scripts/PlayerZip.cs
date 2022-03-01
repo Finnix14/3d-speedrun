@@ -17,6 +17,7 @@ public class PlayerZip : MonoBehaviour
                 if (hit.collider.tag == "zipline")
                 {
                     hit.collider.GetComponent<Zipline>().StartZipline(gameObject);
+                    
                 }
             }
         }

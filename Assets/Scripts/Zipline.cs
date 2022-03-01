@@ -28,7 +28,7 @@ public class Zipline : MonoBehaviour
     {
         if ((!zipping || localzip == null)) return;
 
-        GetComponent<Rigidbody>().AddForce((targetZip.ZipTransform.position - ZipTransform.position).normalized * ZipSpeed * Time.deltaTime, ForceMode.Acceleration);
+        localzip.GetComponent<Rigidbody>().AddForce((targetZip.ZipTransform.position - ZipTransform.position).normalized * ZipSpeed * Time.deltaTime, ForceMode.Acceleration);
 
         if (Vector3.Distance(localzip.transform.position, targetZip.transform.position) <= arrivalThreshold)
         {
@@ -44,7 +44,7 @@ public class Zipline : MonoBehaviour
         localzip.transform.position = ZipTransform.position;
         localzip.transform.localScale = new Vector3(ZipScale, ZipScale, ZipScale);
         localzip.AddComponent<Rigidbody>().useGravity = false ;
-        //localzip.AddComponent<Collider>().isTrigger = true ;
+        localzip.AddComponent<SphereCollider>().isTrigger = true ;
 
         player.GetComponent<Rigidbody>().useGravity = false;
         player.GetComponent<Rigidbody>().isKinematic = true;
