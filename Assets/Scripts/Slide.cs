@@ -29,9 +29,9 @@ public class Slide : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl)&& player.isGrounded)
+        if (Input.GetKeyDown(KeyCode.C)&& player.isGrounded)
             Sliding();
-        else if (Input.GetKeyUp(KeyCode.LeftControl)&& isSliding)
+        else if (Input.GetKeyUp(KeyCode.C)&& isSliding)
             GoUp();
     }
 

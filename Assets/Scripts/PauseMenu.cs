@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public static bool isPaused = false;
-    public Canvas canvas;
 
+
+    public static bool isPaused;
     void Start()
     {
         pauseMenu.SetActive(false);
+        
     }
 
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,26 +29,46 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+
+    public void PauseGame()
+    {
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+
+    }
+
     public void ResumeGame()
     {
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
 
-    public void PauseGame()
+    public void RestartGame()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
-    }
-    public void GoToMainMenu()
-    {
+        SceneManager.LoadScene("Game");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        isPaused = false;
+
     }
+
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }
