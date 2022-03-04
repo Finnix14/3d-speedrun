@@ -6,8 +6,8 @@ public class SettingsMenu : MonoBehaviour
 
     public AudioMixer mainMixer;
     public GameObject settingsmenu;
-    public GameObject pausemenu;
-
+    public GameObject mainmenu;
+    public static bool settingsEnabled;
 
     void Start()
     {
@@ -31,7 +31,8 @@ public class SettingsMenu : MonoBehaviour
     public void BackToPauseMenu()
     {
         settingsmenu.SetActive(false);
-        pausemenu.SetActive(true);
+        mainmenu.SetActive(true);
+        settingsEnabled = false;
     }
  
 }
