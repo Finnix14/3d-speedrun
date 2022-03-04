@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-
+    public GameObject canvasdisable;
+    public GameObject canvasenable;
 
     public static bool isPaused;
     void Start()
@@ -65,6 +66,18 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+
+    public void Settings()
+    {
+        canvasdisable.SetActive(false);
+        canvasenable.SetActive(true);
+    }
+
+    public void Back()
+    {
+        canvasdisable.SetActive(true);
     }
 
     public void MainMenu()
