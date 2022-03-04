@@ -7,6 +7,7 @@ TagManager:
   - Wall Run
   - gun
   - zipline
+  - DeathPlane
   layers:
   - Default
   - TransparentFX
