@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject canvasdisable;
-    public GameObject canvasenable;
+    
     public static bool settingsEnabled;
 
     public static bool isPaused;
@@ -74,7 +74,7 @@ public class PauseMenu : MonoBehaviour
     public void Settings()
     {
         canvasdisable.SetActive(false);
-        canvasenable.SetActive(true);
+
         settingsEnabled = false;
     }
 

@@ -8,6 +8,7 @@ TagManager:
   - gun
   - zipline
   - DeathPlane
+  - Finish Line
   layers:
   - Default
   - TransparentFX

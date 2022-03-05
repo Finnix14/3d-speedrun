@@ -14,6 +14,11 @@ public class Timer : MonoBehaviour
     {
         StartCoroutine("StopWatch");
     }
+
+ 
+
+
+
     IEnumerator StopWatch()
     {
         while (true)

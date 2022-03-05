@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     float playerHeight = 2f;
- 
+    public Timer timer;
 
     [SerializeField] Transform orientation;
 
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 6f;
+    [SerializeField] public float moveSpeed = 6f;
     [SerializeField] float airMultiplier = 0.4f;
     float movementMultiplier = 10f;
 
@@ -50,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     RaycastHit slopeHit;
+
+    
 
     private bool OnSlope()
     {
@@ -171,11 +174,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (col.gameObject.CompareTag("DeathPlane"))
             ReloadLevel();
+
+        if (col.gameObject.CompareTag("Finish Line"))
+            StopWatch();
+
+    }
+
+    void StopWatch()
+    {
+        timer.StopCoroutine("StopWatch");
     }
 
     void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //add whatever here
+        
     }
 }
