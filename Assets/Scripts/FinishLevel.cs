@@ -5,7 +5,7 @@ using UnityEngine;
 public class FinishLevel : MonoBehaviour
 {
     public GameObject gameUICanvas;
-    
+
     
     public PlayerMovement player;
 

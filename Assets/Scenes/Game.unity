@@ -8977,6 +8977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameUICanvas: {fileID: 375214287}
+  pauseMenuCanvas: {fileID: 1118405591}
   player: {fileID: 1807400400}
   slowmomusic: {fileID: 724278954}
 --- !u!1001 &1980853223
