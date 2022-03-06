@@ -48,19 +48,5 @@ public class PlayerLook : MonoBehaviour
         
     }
 
-    private void CheckForShooting()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit WhatIHit;
-            if(Physics.Raycast(transform.position, transform.forward, out WhatIHit, Mathf.Infinity))
-            {
-                IDamegeable damegable = WhatIHit.collider.GetComponent<IDamegeable>();
-                if (damegable != null)
-                {
-                    damegable.DealDamage(10);
-                }
-            }
-        }
-    }
+ 
 }

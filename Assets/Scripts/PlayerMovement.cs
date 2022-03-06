@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] public float moveSpeed = 6f;
-    [SerializeField] float airMultiplier = 0.4f;
+    [SerializeField] float airMultiplier = 0.2f;
     float movementMultiplier = 10f;
 
     [Header("Sprinting")]
@@ -31,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Drag")]
-    [SerializeField] float groundDrag = 6f;
-    [SerializeField] float airDrag = 2f;
+    [SerializeField] float groundDrag = 7f;
+    [SerializeField] float airDrag = 1f;
 
     float horizontalMovement;
     float verticalMovement;

@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject canvasdisable;
     
+    
     public static bool settingsEnabled;
 
     public static bool isPaused;
@@ -20,6 +21,7 @@ public class PauseMenu : MonoBehaviour
     
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape)&& !settingsEnabled)
         {
             if (isPaused)
@@ -31,32 +33,39 @@ public class PauseMenu : MonoBehaviour
                 PauseGame();
             }
         }
+            
     }
 
     public void PauseGame()
     {
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+        if(Time.timeScale == 1)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
+        }
+        
 
     }
 
     public void ResumeGame()
     {
+        if(Time.timeScale == 0)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+            isPaused = false;
+        }
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         pauseMenu.SetActive(false);
@@ -69,6 +78,9 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
+  
+
+ 
 
 
     public void Settings()
