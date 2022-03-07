@@ -6,10 +6,14 @@ public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
     Animator anim;
+
+ 
     void Start()
     {
         selectWeapon();
         anim = GetComponent<Animator>();
+        
+
     }
 
     // Update is called once per frame
@@ -63,8 +67,10 @@ public class WeaponSwitching : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            KnifeSpin();
+            KnifeInspect();
         }
+      
+
 
     }
 
@@ -83,10 +89,17 @@ public class WeaponSwitching : MonoBehaviour
 
         }
     }
-    void KnifeSpin()
+    void KnifeInspect()
     {
-            anim.Play("weaponflip");
+        anim.Play("weaponflip");
+            
     }
+
+ 
+  
+
+
+
 
 
 
