@@ -33,6 +33,8 @@ public class WallRun : MonoBehaviour
 
     private Rigidbody rb;
 
+    public AudioSource jumping;
+
     bool CanWallRun()
     {
         return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight);
@@ -97,12 +99,14 @@ public class WallRun : MonoBehaviour
                 Vector3 wallRunJumpDirection = transform.up + leftWallHit.normal;
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 rb.AddForce(wallRunJumpDirection * wallRunJumpForce * 100, ForceMode.Force);
+                jumping.Play();
             }
             else if (wallRight)
             {
                 Vector3 wallRunJumpDirection = transform.up + rightWallHit.normal;
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 rb.AddForce(wallRunJumpDirection * wallRunJumpForce * 100, ForceMode.Force);
+                jumping.Play();
             }
         }
     }

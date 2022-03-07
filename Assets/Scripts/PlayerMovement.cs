@@ -52,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
 
     RaycastHit slopeHit;
 
+    public AudioSource walking;
+    public AudioSource jumping;
+
 
     
 
@@ -111,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-
+            jumping.Play();
         }
     }
 
@@ -119,9 +122,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(sprintKey) && isGrounded)
         {
+            
             if (isGrounded)
             {
                 anim.SetBool("sprint", true);
+                
             }
             
             moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
@@ -161,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && !OnSlope())
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            
         }
         else if (isGrounded && OnSlope())
         {
@@ -194,6 +200,11 @@ public class PlayerMovement : MonoBehaviour
     void StartStopWatch()
     {
         timer.StartCoroutine("StartWatch");
+    }
+
+    void RunningSFX()
+    {
+        walking.Play();
     }
 
     void ReloadLevel()
