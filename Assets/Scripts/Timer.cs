@@ -32,4 +32,19 @@ public class Timer : MonoBehaviour
             yield return null;
         }
     }
+
+    IEnumerator StartWatch()
+    {
+        while (true)
+        {
+            time += Time.deltaTime;
+            msec = (int)((time - (int)time) * 100);
+            sec = (int)(time % 60);
+            min = (int)(time / 60 % 60);
+
+            timer.text = string.Format("{0:00}:{1:00}:{2:00}", min, sec, msec);
+            yield return true;
+        }
+    }
 }
+

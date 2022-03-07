@@ -10,9 +10,13 @@ public class GrapplingGun : MonoBehaviour
     private float maxDistance = 20f;
     private SpringJoint joint;
 
+    Animator anim;
+
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        anim = GetComponent<Animator>();
+        
     }
 
     void Update()
@@ -59,6 +63,13 @@ public class GrapplingGun : MonoBehaviour
 
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
+        }
+    }
+    void KnifeSpin()
+    {
+        if (Input.GetKey(KeyCode.Y))
+        {
+            anim.Play("spin");
         }
     }
 

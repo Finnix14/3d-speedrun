@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     RaycastHit slopeHit;
 
+
     
 
     private bool OnSlope()
@@ -103,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
     }
-
+   
     void Jump()
     {
         if (isGrounded)
@@ -137,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+  
     void ControlDrag()
     {
         if (isGrounded)
@@ -178,11 +180,20 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Finish Line"))
             StopWatch();
 
+        if (col.gameObject.CompareTag("Start Line"))
+        {
+            StartStopWatch();
+        }
     }
+ 
 
     void StopWatch()
     {
         timer.StopCoroutine("StopWatch");
+    }
+    void StartStopWatch()
+    {
+        timer.StartCoroutine("StartWatch");
     }
 
     void ReloadLevel()

@@ -9,6 +9,7 @@ TagManager:
   - zipline
   - DeathPlane
   - Finish Line
+  - Start Line
   layers:
   - Default
   - TransparentFX

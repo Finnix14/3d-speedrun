@@ -653,11 +653,11 @@ MonoBehaviour:
   walkSpeed: 4
   sprintSpeed: 6
   acceleration: 10
-  jumpForce: 22
+  jumpForce: 18
   jumpKey: 32
   sprintKey: 304
   groundDrag: 6
-  airDrag: 4
+  airDrag: 2
   groundCheck: {fileID: 6143085294507109291}
   groundMask:
     serializedVersion: 2
@@ -695,8 +695,8 @@ MonoBehaviour:
   orientation: {fileID: 6143085295686377705}
   wallDistance: 0.4
   minimumJumpHeight: 1.5
-  wallRunGravity: 0.7
-  wallRunJumpForce: 6
+  wallRunGravity: 0.5
+  wallRunJumpForce: 4
   cam: {fileID: 6143085295932909192}
   fov: 90
   wallRunfov: 100
