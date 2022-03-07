@@ -9329,10 +9329,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 772369818595116722, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 289.16696
+      objectReference: {fileID: 0}
+    - target: {fileID: 772369818595116722, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143085294637954601, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: wallRunJumpForce
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6143085294637954603, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
       propertyPath: timer
       value: 
       objectReference: {fileID: 1506905180}
+    - target: {fileID: 6143085294637954603, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: airDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143085294637954603, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: jumpForce
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143085294637954603, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: moveSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143085294637954603, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: sprintSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143085294637954608, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6143085294637954609, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -9381,6 +9413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6143085294637954615, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 486f073a6b09e0c4b945a81e86d22415, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bd211bde9dae9a4e87e930ef3dd0fbf, type: 3}
 --- !u!223 &7050691016172561064
