@@ -6409,7 +6409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 300916124625867358, guid: 8f312b3664ecb9c4f9fe669db2aca33b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.09
+      value: -17.44
       objectReference: {fileID: 0}
     - target: {fileID: 300916124625867358, guid: 8f312b3664ecb9c4f9fe669db2aca33b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9584,9 +9584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use "C" to Slide!
-
-'
+  m_text: Hold "C" To Slide!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9613,8 +9611,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.2
-  m_fontSizeBase: 0.2
+  m_fontSize: 0.53
+  m_fontSizeBase: 0.53
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -54,7 +54,7 @@ public class GrapplingGun : MonoBehaviour
 
             //Adjust these values to fit your game.
             joint.spring = 4.5f;
-            joint.damper = 3f;
+            joint.damper = 0.5f;
             joint.massScale = 4.5f;
 
             lr.positionCount = 2;
