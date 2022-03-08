@@ -7,11 +7,17 @@ public class MainMenu : MonoBehaviour
     public GameObject canvasdisable;
     public GameObject canvasenable;
     public static bool settingsEnabled;
+
+    void Start()
+    {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Level 1");
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     public void BackToMainMenu()

@@ -6,7 +6,9 @@ public class GrapplingGun : MonoBehaviour
     private LineRenderer lr;
     private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
     public Transform gunTip, camera, player;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
     private float maxDistance = 20f;
     private SpringJoint joint;
     //public AudioSource shoot;

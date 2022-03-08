@@ -16,16 +16,16 @@ public class FPSDisplay : MonoBehaviour
         float current = 0;
         current = Time.frameCount / Time.time;
         avgFrameRate = (int)current;
-        display_Text.text = avgFrameRate.ToString() + " FPS";
+        display_Text.text = avgFrameRate.ToString();
 
         //set colour to red
-        if(avgFrameRate <= 10) //less than or equal to 10 
-            display_Text.color = new Color(255, 0, 0, 255);
+       // if(avgFrameRate <= 10) //less than or equal to 10 
+           // display_Text.color = new Color(255, 0, 0, 255);
         //set colour to orange
-        else if(avgFrameRate <= 40) //less than or equal to 40
-            display_Text.color = new Color(255, 165, 0, 255);
+       // else if(avgFrameRate <= 40) //less than or equal to 40
+       //     display_Text.color = new Color(255, 165, 0, 255);
         //set colour to green
-        else if(avgFrameRate >= 41) //greater than or equal to 41
-            display_Text.color = new Color(0, 255, 0, 255);
+     //   else if(avgFrameRate >= 41) //greater than or equal to 41
+         //   display_Text.color = new Color(0, 255, 0, 255);
     }
 }
