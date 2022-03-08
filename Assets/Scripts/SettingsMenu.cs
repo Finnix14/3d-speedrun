@@ -62,7 +62,19 @@ public class SettingsMenu : MonoBehaviour
 
             UpdateResLabel();
         }
-        
+
+        float vol = 0f;
+        theMixer.GetFloat("MasterVol", out vol);
+        masterSlider.value = vol;
+        mastLabel.text = Mathf.RoundToInt(masterSlider.value + 80).ToString();
+
+        theMixer.GetFloat("MusicVol", out vol);
+        musicSlider.value = vol;
+        musicLabel.text = Mathf.RoundToInt(musicSlider.value + 80).ToString();
+
+        theMixer.GetFloat("SFXVol", out vol);
+        sfxSlider.value = vol;
+        sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
     }
   
    

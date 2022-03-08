@@ -33,17 +33,9 @@ public class WeaponSwitching : MonoBehaviour
             selectedWeapon++;
            
         } 
-        if(Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
-            
-            if (selectedWeapon >= transform.childCount - 2)
-                selectedWeapon = 0;
-                
-            else
-                
-            selectedWeapon--;
-            
-        }
+       
+      
+
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -56,8 +48,15 @@ public class WeaponSwitching : MonoBehaviour
         {
             
             selectedWeapon = 1;
+
+           
                
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
+        {
+            selectedWeapon = 2;
+        }
+
 
         if (previousSelectedWeapon != selectedWeapon)
         {
@@ -69,8 +68,11 @@ public class WeaponSwitching : MonoBehaviour
         {
             KnifeInspect();
         }
-      
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            KnifeSpin();
+        }
 
     }
 
@@ -93,6 +95,11 @@ public class WeaponSwitching : MonoBehaviour
     {
         anim.Play("weaponflip");
             
+    }
+
+    void KnifeSpin()
+    {
+        anim.Play("knifespin");
     }
 
  

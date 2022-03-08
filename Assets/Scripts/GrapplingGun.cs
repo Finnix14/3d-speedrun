@@ -73,11 +73,19 @@ public class GrapplingGun : MonoBehaviour
             currentGrapplePosition = gunTip.position;
         }
     }
-    void KnifeSpin()
+    void KnifeInspect()
     {
         if (Input.GetKey(KeyCode.Y))
         {
             anim.Play("spin");
+        }
+    }
+
+    void KnifeSpin()
+    {
+        if (Input.GetKey(KeyCode.F))
+        {
+            anim.Play("knifespin");
         }
     }
 
