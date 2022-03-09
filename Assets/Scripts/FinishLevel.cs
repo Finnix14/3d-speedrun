@@ -10,6 +10,7 @@ public class FinishLevel : MonoBehaviour
     public PlayerMovement player;
 
     public AudioSource slowmomusic;
+    public AudioSource slowmoSFX;
 
 
     void Start()
@@ -31,11 +32,13 @@ public class FinishLevel : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             slowmomusic.pitch = Time.timeScale;
+            slowmoSFX.pitch = Time.timeScale;
         }
     }
 
     public void Update()
     {
         slowmomusic.pitch = Time.timeScale;
+        slowmoSFX.pitch = Time.timeScale;
     }
 }

@@ -26,7 +26,7 @@ public class PlayerLook : MonoBehaviour
         Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-        
+            
     
     }
 

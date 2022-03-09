@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
     RaycastHit slopeHit;
 
-    public AudioSource walking;
     public AudioSource jumping;
 
 
@@ -202,11 +201,7 @@ public class PlayerMovement : MonoBehaviour
         timer.StartCoroutine("StartWatch");
     }
 
-    void RunningSFX()
-    {
-        walking.Play();
-    }
-
+    
     void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
