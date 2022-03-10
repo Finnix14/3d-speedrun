@@ -10,37 +10,46 @@ public class Shotgun : MonoBehaviour
     public PlayerMovement player;
     public GameObject shotgun;
     public Rigidbody playerRig;
-
+    public Animator anim;
     public float launchForce;
-
+    public ParticleSystem muzzleflash;
     public bool isShotgun = false;
-
-    // Start is called before the first frame update
-
-  
+    public AudioSource shoot;
 
 
 
     void Start()
     {
         col = GetComponent<CapsuleCollider>();
-        playerRig = GetComponent<Rigidbody>();
-        player = GetComponent<PlayerMovement>();
+  
     }
     
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && shotgun == true) 
         {
-            Propell();
+            StartCoroutine("Propell");
+          
+
         }
     }
 
-    void Propell()
+    IEnumerator Propell()
     {
+        anim.SetBool("fireRate", true);
+        muzzleflash.Play();
+        shoot.Play();
         playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
+        yield return new WaitForSeconds(1);
+        
+        if (Input.GetMouseButtonDown(0) && shotgun == true)
+        {
+
+            playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
+
+        }
+
+
     }
 
 }

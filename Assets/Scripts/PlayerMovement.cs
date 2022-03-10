@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioSource jumping;
 
-
+    public GameObject nextlevelUI;
     
 
     private bool OnSlope()
@@ -78,6 +78,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         rb.freezeRotation = true;
+        nextlevelUI.SetActive(false);
+        
       
     }
 
@@ -178,9 +180,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.CompareTag("DeathPlane"))
-            ReloadLevel();
+    { 
+            
 
         if (col.gameObject.CompareTag("Finish Line"))
             StopWatch();
@@ -198,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void StartStopWatch()
     {
-        timer.StartCoroutine("StartWatch");
+        timer.StartCoroutine("StopWatch");
     }
 
     

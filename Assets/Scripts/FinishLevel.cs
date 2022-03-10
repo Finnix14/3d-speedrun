@@ -15,7 +15,7 @@ public class FinishLevel : MonoBehaviour
 
     void Start()
     {
-        gameUICanvas.SetActive(false);
+        gameUICanvas.SetActive(true);
         Time.timeScale = 1f;
     }
 
