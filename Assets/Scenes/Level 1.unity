@@ -4351,7 +4351,7 @@ GameObject:
   - component: {fileID: 1529557429}
   - component: {fileID: 1529557431}
   - component: {fileID: 1529557430}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9965,6 +9965,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 300916124625867358, guid: 8f312b3664ecb9c4f9fe669db2aca33b, type: 3}
   m_PrefabInstance: {fileID: 1680584871}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1734186779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734186780}
+  - component: {fileID: 1734186781}
+  m_Layer: 6
+  m_Name: shotgunsway
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734186780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734186779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 872983241529419258}
+  m_Father: {fileID: 1746903380}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1734186781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734186779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c596e410b459544ea37f151d4e4b903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smooth: 10
+  multiplier: 5
 --- !u!1 &1740362212
 GameObject:
   m_ObjectHideFlags: 0
@@ -10061,6 +10107,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740362212}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1746903379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746903380}
+  - component: {fileID: 1746903381}
+  m_Layer: 6
+  m_Name: shotgunholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1746903380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746903379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1734186780}
+  m_Father: {fileID: 4211081547423889556}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1746903381
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746903379}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff20b00988f3a8044a07a038f6dea8be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1777088650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11816,7 +11913,7 @@ GameObject:
   - component: {fileID: 8261263701866277307}
   - component: {fileID: 2949119803105061143}
   - component: {fileID: 2907054831879678752}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GripRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11830,9 +11927,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5219172982039916616}
-  m_LocalRotation: {x: -0.024776848, y: 0.7066726, z: 0.024776848, w: -0.7066726}
-  m_LocalPosition: {x: 0.009, y: -0.129, z: -0.029}
-  m_LocalScale: {x: 0.053238813, y: 0.12422598, z: 0.0640476}
+  m_LocalRotation: {x: -0.024776844, y: 0.7066726, z: 0.024776844, w: -0.7066726}
+  m_LocalPosition: {x: 0.0089998245, y: -0.54300034, z: 0.4400012}
+  m_LocalScale: {x: 0.053238798, y: 0.124226, z: 0.0640476}
   m_Children:
   - {fileID: 591412359288701558}
   - {fileID: 6243510506688316994}
@@ -11844,7 +11941,8 @@ Transform:
   - {fileID: 5761708162830168056}
   - {fileID: 1398815959440652598}
   - {fileID: 1529557429}
-  m_Father: {fileID: 6505698757075225492}
+  - {fileID: 2311502604107167572}
+  m_Father: {fileID: 1734186780}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1139698409030529280
@@ -11858,7 +11956,7 @@ GameObject:
   - component: {fileID: 8072114508413895488}
   - component: {fileID: 3315933747133486730}
   - component: {fileID: 8806800111744006233}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GripLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12136,14 +12234,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6938883461434927053}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.070248544, y: -0.07852256, z: -0.63245106}
-  m_LocalScale: {x: 0.117416665, y: 0.117412075, z: 0.117421515}
+  m_LocalRotation: {x: -0.024776844, y: 0.7066726, z: -0.024776844, w: -0.7066726}
+  m_LocalPosition: {x: -11.373411, y: 0.06513087, z: -0.95629907}
+  m_LocalScale: {x: 1.8332715, y: 0.9513306, z: 2.1993804}
   m_Children:
   - {fileID: 7238550392213733664}
   - {fileID: 6875665900313831291}
-  m_Father: {fileID: 6505698757075225492}
-  m_RootOrder: 1
+  m_Father: {fileID: 872983241529419258}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1001 &2423211736927849156
 PrefabInstance:
@@ -12327,7 +12425,7 @@ GameObject:
   - component: {fileID: 1398815959440652598}
   - component: {fileID: 626796526660489664}
   - component: {fileID: 7832124343614447654}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: UpperGrip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12459,7 +12557,7 @@ GameObject:
   - component: {fileID: 7238550392213733664}
   - component: {fileID: 3873497401336667654}
   - component: {fileID: 8065549097604600864}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube
   m_TagString: gun
   m_Icon: {fileID: 0}
@@ -12511,25 +12609,8 @@ GameObject:
   - component: {fileID: 591412359288701558}
   - component: {fileID: 3243782498269944039}
   - component: {fileID: 6868676125751106226}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &3634621265790751375
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6505698757075225492}
-  - component: {fileID: 4211081548732183443}
-  m_Layer: 6
-  m_Name: shotgun holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13054,7 +13135,7 @@ Transform:
   m_Children:
   - {fileID: 4211081548041934212}
   - {fileID: 4211081548437644013}
-  - {fileID: 6505698757075225492}
+  - {fileID: 1746903380}
   m_Father: {fileID: 4211081548407516024}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -9.3386, y: 14.734165, z: 13.003258}
@@ -14011,20 +14092,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4211081548479820716}
   m_Enabled: 1
---- !u!114 &4211081548732183443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3634621265790751375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c596e410b459544ea37f151d4e4b903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smooth: 10
-  multiplier: 5
 --- !u!1 &4211081548760954316
 GameObject:
   m_ObjectHideFlags: 0
@@ -14271,7 +14338,7 @@ GameObject:
   - component: {fileID: 872983241529419258}
   - component: {fileID: 5219172982039916617}
   - component: {fileID: 5219172982039916618}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14419,7 +14486,7 @@ GameObject:
   - component: {fileID: 5761708162830168056}
   - component: {fileID: 8370553141982009224}
   - component: {fileID: 2803242718896476858}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TopTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14556,7 +14623,7 @@ GameObject:
   - component: {fileID: 1900865498714738058}
   - component: {fileID: 3062539999870122530}
   - component: {fileID: 8949235782483341569}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14588,29 +14655,13 @@ GameObject:
   - component: {fileID: 4425347441771857679}
   - component: {fileID: 400628727166080877}
   - component: {fileID: 1644020422875725152}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Stock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6505698757075225492
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3634621265790751375}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.397, z: 0.439}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 872983241529419258}
-  - {fileID: 2311502604107167572}
-  m_Father: {fileID: 4211081547423889556}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6535338375749292619
 GameObject:
   m_ObjectHideFlags: 0
@@ -14709,7 +14760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2311502604107167572}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15088,7 +15139,7 @@ GameObject:
   - component: {fileID: 6875665900313831291}
   - component: {fileID: 7159104945714006122}
   - component: {fileID: 8643395906176355749}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Cube.001
   m_TagString: gun
   m_Icon: {fileID: 0}
@@ -15197,7 +15248,7 @@ GameObject:
   - component: {fileID: 6243510506688316994}
   - component: {fileID: 701392886798724641}
   - component: {fileID: 4164772057567195940}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BarrelLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15215,7 +15266,7 @@ GameObject:
   - component: {fileID: 4269028415114428226}
   - component: {fileID: 1350165866933958464}
   - component: {fileID: 1524259874498091481}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Pump
   m_TagString: Untagged
   m_Icon: {fileID: 0}

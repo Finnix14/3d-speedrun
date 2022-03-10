@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shotgun : MonoBehaviour
 {
-   
+
     CapsuleCollider col;
     Camera cam;
     public PlayerMovement player;
@@ -15,41 +15,33 @@ public class Shotgun : MonoBehaviour
     public ParticleSystem muzzleflash;
     public bool isShotgun = false;
     public AudioSource shoot;
+    float fireRate = 0.5f;
+    float nextTimeToFire;
 
 
 
     void Start()
     {
         col = GetComponent<CapsuleCollider>();
-  
+
     }
-    
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && shotgun == true) 
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
         {
             StartCoroutine("Propell");
-          
-
         }
     }
 
     IEnumerator Propell()
     {
+        nextTimeToFire = Time.time + fireRate;
         anim.SetBool("fireRate", true);
         muzzleflash.Play();
         shoot.Play();
         playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
         yield return new WaitForSeconds(1);
-        
-        if (Input.GetMouseButtonDown(0) && shotgun == true)
-        {
-
-            playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
-
-        }
-
-
     }
 
 }
