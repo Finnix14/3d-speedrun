@@ -20,8 +20,10 @@ public class Shotgun : MonoBehaviour
 
     public int maxAmmo = 2;
     private int currentAmmo;
-    public float reloadTime = 1f;
+    public float reloadTime = 0.7f;
     private bool isReloading = false;
+
+    public Animator animator;
 
 
 
@@ -30,6 +32,13 @@ public class Shotgun : MonoBehaviour
         col = GetComponent<CapsuleCollider>();
         currentAmmo = maxAmmo;
     }
+
+    void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("Reloading", false);
+    }
+
 
     void Update()
     {
@@ -54,10 +63,14 @@ public class Shotgun : MonoBehaviour
     IEnumerator Reload()
     {
         isReloading = true;
-        Debug.Log("reload");
-        yield return new WaitForSeconds(reloadTime);
+        animator.SetBool("Reloading", true);
+        yield return new WaitForSeconds(reloadTime - .25f);
+        animator.SetBool("Reloading", false);
+        yield return new WaitForSeconds(.25f);
+
         currentAmmo = maxAmmo;
         isReloading = false;
+        
     }
 
    void Shoot()
