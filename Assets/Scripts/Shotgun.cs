@@ -15,12 +15,12 @@ public class Shotgun : MonoBehaviour
     public ParticleSystem muzzleflash;
     public bool isShotgun = false;
     public AudioSource shoot;
-    float fireRate = 0.3f;
+    float fireRate = 0.35f;
     float nextTimeToFire;
 
     public int maxAmmo = 2;
-    private int currentAmmo;
-    public float reloadTime = 0.7f;
+    private int currentAmmo = 0;
+    public float reloadTime = 1.2f;
     private bool isReloading = false;
 
     public Animator animator;
@@ -54,7 +54,9 @@ public class Shotgun : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
         {
             Shoot();
+          
             nextTimeToFire = Time.time + fireRate;
+           
         }
 
 
@@ -76,9 +78,11 @@ public class Shotgun : MonoBehaviour
    void Shoot()
     {
         currentAmmo--;
+        
         muzzleflash.Play();
         shoot.Play();
         playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
+       
        
     }
 }
