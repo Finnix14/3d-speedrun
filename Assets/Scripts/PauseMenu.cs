@@ -7,32 +7,35 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject canvasdisable;
 
-    public GameObject mainmenu;
     public static bool settingsEnabled;
 
     public static bool isPaused;
-
+    public static bool isMenu;
     void Start()
     {
         pauseMenu.SetActive(false);
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape)&& !settingsEnabled)
+        if (Input.GetKeyDown(KeyCode.Escape)&& !settingsEnabled && !isMenu)
         {
             if (isPaused)
             {
                 ResumeGame();
             }
+
             else
             {
                 PauseGame();
             }
         }
+
+        
             
     }
 
@@ -95,8 +98,5 @@ public class PauseMenu : MonoBehaviour
         canvasdisable.SetActive(true);
     }
 
-    public void MainMenu()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
+
 }

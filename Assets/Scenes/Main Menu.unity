@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959b81bce4527d84dae744760532f7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasdisable: {fileID: 2020482504}
-  canvasenable: {fileID: 1917929353}
+  mainmenu: {fileID: 2020482504}
+  settingsmenu: {fileID: 1917929353}
 --- !u!114 &8810637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +591,7 @@ MonoBehaviour:
   theMixer: {fileID: 24100000, guid: 359bd1e7a4477d34c89b8227260255ce, type: 2}
   settingsmenu: {fileID: 1917929353}
   mainmenu: {fileID: 2020482504}
+  videop: {fileID: 0}
   fullscreenTog: {fileID: 381114474}
   vsyncTog: {fileID: 1366647563}
   resolutionLabel: {fileID: 1989326495}

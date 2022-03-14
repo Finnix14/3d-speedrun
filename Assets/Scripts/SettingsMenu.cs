@@ -92,7 +92,6 @@ public class SettingsMenu : MonoBehaviour
         settingsmenu.SetActive(false);
         mainmenu.SetActive(true);
         settingsEnabled = false;
-        videop.gameObject.SetActive(true);
     }
 
     public void ResLeft()
