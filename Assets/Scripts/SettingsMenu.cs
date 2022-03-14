@@ -12,6 +12,7 @@ public class SettingsMenu : MonoBehaviour
     public GameObject settingsmenu;
     public GameObject mainmenu;
     public static bool settingsEnabled;
+    public GameObject videop;
 
     public Toggle fullscreenTog, vsyncTog;
     public TMP_Text resolutionLabel;
@@ -75,6 +76,8 @@ public class SettingsMenu : MonoBehaviour
         theMixer.GetFloat("SFXVol", out vol);
         sfxSlider.value = vol;
         sfxLabel.text = Mathf.RoundToInt(sfxSlider.value + 80).ToString();
+
+    
     }
   
    
@@ -89,6 +92,7 @@ public class SettingsMenu : MonoBehaviour
         settingsmenu.SetActive(false);
         mainmenu.SetActive(true);
         settingsEnabled = false;
+        videop.gameObject.SetActive(true);
     }
 
     public void ResLeft()

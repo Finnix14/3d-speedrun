@@ -6,8 +6,8 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject canvasdisable;
-    
-    
+
+    public GameObject mainmenu;
     public static bool settingsEnabled;
 
     public static bool isPaused;
