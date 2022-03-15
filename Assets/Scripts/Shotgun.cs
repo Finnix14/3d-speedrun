@@ -24,6 +24,7 @@ public class Shotgun : MonoBehaviour
     private bool isReloading = false;
 
     public Animator animator;
+    public AudioSource reload;
 
 
 
@@ -72,7 +73,9 @@ public class Shotgun : MonoBehaviour
             animator.SetBool("Reloading", true);
             yield return new WaitForSeconds(reloadTime - .25f);
             animator.SetBool("Reloading", false);
+            reload.Play();
             yield return new WaitForSeconds(.25f);
+           
 
             currentAmmo = maxAmmo;
             isReloading = false;

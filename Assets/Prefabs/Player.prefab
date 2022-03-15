@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 5663770914727893930}
   - component: {fileID: 5663770914727893929}
   - component: {fileID: 5663770914727893928}
+  - component: {fileID: 5463533297823948513}
   m_Layer: 9
   m_Name: shotgun
   m_TagString: Untagged
@@ -501,6 +502,7 @@ MonoBehaviour:
   maxAmmo: 2
   reloadTime: 1.3
   animator: {fileID: 5663770914727893928}
+  reload: {fileID: 0}
 --- !u!82 &5663770914727893929
 AudioSource:
   m_ObjectHideFlags: 0
@@ -616,6 +618,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &5463533297823948513
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5663770914727893926}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5663770914763152873
 GameObject:
   m_ObjectHideFlags: 0
@@ -7342,11 +7440,11 @@ GameObject:
   - component: {fileID: 5663770916275371307}
   - component: {fileID: 5663770916275371306}
   - component: {fileID: 5663770916275371305}
+  - component: {fileID: 5663770916275371301}
   - component: {fileID: 5663770916275371304}
   - component: {fileID: 5663770916275371303}
   - component: {fileID: 5663770916275371302}
   - component: {fileID: 8424271144486175931}
-  - component: {fileID: 5663770916275371301}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -7482,6 +7580,25 @@ MonoBehaviour:
   player: {fileID: 8424271144486175933}
   reducedHeight: 0.7
   slideSpeed: 0
+--- !u!114 &5663770916275371301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5663770916275371298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c64273ffc0ca49459eb263c81642fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerUI: {fileID: 0}
+  timer: {fileID: 0}
+  player: {fileID: 8424271144486175933}
+  deathplane: {fileID: 0}
+  camsense: {fileID: 5663770916275371307}
+  slowmomusic: {fileID: 0}
+  slowmoSFX: {fileID: 8424271144486175931}
 --- !u!136 &5663770916275371304
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7652,25 +7769,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5663770916275371301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5663770916275371298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c64273ffc0ca49459eb263c81642fed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerUI: {fileID: 0}
-  timer: {fileID: 0}
-  player: {fileID: 8424271144486175933}
-  deathplane: {fileID: 0}
-  camsense: {fileID: 5663770916275371307}
-  slowmomusic: {fileID: 0}
-  slowmoSFX: {fileID: 8424271144486175931}
 --- !u!1 &5663770916325322141
 GameObject:
   m_ObjectHideFlags: 0
