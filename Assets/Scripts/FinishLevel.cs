@@ -5,6 +5,7 @@ using UnityEngine;
 public class FinishLevel : MonoBehaviour
 {
     public GameObject gameUICanvas;
+    public GameObject winCanvas;
 
     
     public PlayerMovement player;
@@ -16,6 +17,7 @@ public class FinishLevel : MonoBehaviour
     void Start()
     {
         gameUICanvas.SetActive(true);
+        winCanvas.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -25,6 +27,7 @@ public class FinishLevel : MonoBehaviour
         {
             
             gameUICanvas.SetActive(true);
+            winCanvas.SetActive(true);
             Time.timeScale = .7f;
            
             player.moveSpeed = 0;

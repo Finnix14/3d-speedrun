@@ -27,6 +27,7 @@ public class Shotgun : MonoBehaviour
 
 
 
+
     void Start()
     {
         col = GetComponent<CapsuleCollider>();
@@ -61,18 +62,21 @@ public class Shotgun : MonoBehaviour
 
 
     }
-
+    
+    
     IEnumerator Reload()
     {
-        isReloading = true;
-        animator.SetBool("Reloading", true);
-        yield return new WaitForSeconds(reloadTime - .25f);
-        animator.SetBool("Reloading", false);
-        yield return new WaitForSeconds(.25f);
+        if (player.isGrounded)
+        {
+            isReloading = true;
+            animator.SetBool("Reloading", true);
+            yield return new WaitForSeconds(reloadTime - .25f);
+            animator.SetBool("Reloading", false);
+            yield return new WaitForSeconds(.25f);
 
-        currentAmmo = maxAmmo;
-        isReloading = false;
-        
+            currentAmmo = maxAmmo;
+            isReloading = false;
+        }        
     }
 
    void Shoot()

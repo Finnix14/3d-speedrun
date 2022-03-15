@@ -10,6 +10,9 @@ public class Death : MonoBehaviour
     public PlayerMovement player;
     public GameObject deathplane;
     public PlayerLook camsense;
+    public AudioSource slowmomusic;
+    public AudioSource slowmoSFX;
+
 
     private void Start()
     {
@@ -36,5 +39,13 @@ public class Death : MonoBehaviour
         camsense.sensX = 0;
         camsense.sensY = 0;
         player.moveSpeed = 0;
+        slowmomusic.pitch = Time.timeScale;
+        slowmoSFX.pitch = Time.timeScale;
+    }
+
+    void Update()
+    {
+        slowmomusic.pitch = Time.timeScale;
+        slowmoSFX.pitch = Time.timeScale;
     }
 }
