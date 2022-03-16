@@ -10033,6 +10033,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033026286}
   m_Mesh: {fileID: -6265776187016570482, guid: bfff06aaff363a847ad37bf592364e6b, type: 3}
+--- !u!82 &2040543747 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5663770914727893929, guid: 989f39a123a01e94094b0568f8909648, type: 3}
+  m_PrefabInstance: {fileID: 2047028729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2047028729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10056,6 +10061,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -1857222576850892745, guid: 359bd1e7a4477d34c89b8227260255ce, type: 2}
+    - target: {fileID: 5663770914727893930, guid: 989f39a123a01e94094b0568f8909648, type: 3}
+      propertyPath: shoot
+      value: 
+      objectReference: {fileID: 2040543747}
     - target: {fileID: 5663770914727893930, guid: 989f39a123a01e94094b0568f8909648, type: 3}
       propertyPath: reload
       value: 

@@ -70,26 +70,26 @@ public class Shotgun : MonoBehaviour
         if (player.isGrounded)
         {
             isReloading = true;
-            animator.SetBool("Reloading", true);
+            animator.SetBool("Reloading", true); 
             yield return new WaitForSeconds(reloadTime - .25f);
             animator.SetBool("Reloading", false);
-            reload.Play();
             yield return new WaitForSeconds(.25f);
-           
-
             currentAmmo = maxAmmo;
             isReloading = false;
+          
         }        
     }
 
    void Shoot()
     {
         currentAmmo--;
-        
         muzzleflash.Play();
         shoot.Play();
         playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
-       
-       
+    }
+
+    void ReloadSFX()
+    {
+        reload.Play();
     }
 }
