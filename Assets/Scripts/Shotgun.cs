@@ -32,6 +32,7 @@ public class Shotgun : MonoBehaviour
     void Start()
     {
         col = GetComponent<CapsuleCollider>();
+        shoot = GetComponent<AudioSource>();
         currentAmmo = maxAmmo;
     }
 

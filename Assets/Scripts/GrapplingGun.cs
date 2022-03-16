@@ -11,7 +11,7 @@ public class GrapplingGun : MonoBehaviour
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
     private float maxDistance = 20f;
     private SpringJoint joint;
-    //public AudioSource shoot;
+    public AudioSource shoot;
 
     Animator anim;
 
@@ -19,7 +19,7 @@ public class GrapplingGun : MonoBehaviour
     {
         lr = GetComponent<LineRenderer>();
         anim = GetComponent<Animator>();
-        //shoot = GetComponent<AudioSource>();
+        shoot = GetComponent<AudioSource>();
         
     }
 
@@ -52,7 +52,7 @@ public class GrapplingGun : MonoBehaviour
         shootGrapple();
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable))
         {
-            
+            shoot.Play();
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
