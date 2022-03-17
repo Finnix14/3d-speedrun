@@ -13374,7 +13374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8424271143244867908}
   reducedHeight: 0.7
-  slideSpeed: 0
+  slideSpeed: 10
 --- !u!136 &5663770914564280529
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class PlayerLook : MonoBehaviour
     [SerializeField]  public float sensY = 100f;
 
     [SerializeField] Transform cam = null;
-    [SerializeField] Transform orientation = null;
+    [SerializeField] public Transform orientation = null;
 
     float mouseX;
     float mouseY;

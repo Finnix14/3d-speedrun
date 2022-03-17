@@ -29,27 +29,32 @@ public class Slide : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C)&& player.isGrounded)
+        if (Input.GetKeyDown(KeyCode.C) && player.isGrounded)
             Sliding();
-        else if (Input.GetKeyUp(KeyCode.C)&& isSliding)
+
+
+        else if (Input.GetKeyUp(KeyCode.C) && isSliding)
             GoUp();
     }
 
-    private void Sliding()
-    {
-        
-        
-        col.height = reducedHeight;
-        rig.AddForce(Camera.main.transform.forward * slideSpeed, ForceMode.VelocityChange);
-        isSliding = true;
-    }
+        public void Sliding()
+        {
+            col.height = reducedHeight;
+         
+            rig.AddForce(Camera.main.transform.forward * slideSpeed, ForceMode.VelocityChange);
+            isSliding = true;
+            
+        }
 
-    private void GoUp()
-    {
-        col.height = originalHeight;
-        
-        isSliding = false;
-    }
+        public void GoUp()
+        {
+          
+            col.height = originalHeight;
+            isSliding = false;
+        }
+
+ 
+    
 }
 
 
