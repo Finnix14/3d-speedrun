@@ -61,6 +61,15 @@ public class Shotgun : MonoBehaviour
             nextTimeToFire = Time.time + fireRate;
            
         }
+        if (Input.GetKeyDown(KeyCode.R)&& player.isGrounded)
+        {
+            if (currentAmmo <= 1)
+            {
+                StartCoroutine(Reload());
+                return;
+            }
+
+        }
 
 
     }
@@ -93,4 +102,7 @@ public class Shotgun : MonoBehaviour
     {
         reload.Play();
     }
+
+
+    
 }

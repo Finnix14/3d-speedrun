@@ -37,15 +37,13 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
-    //Called after Update
+
     void LateUpdate()
     {
         DrawRope();
     }
 
-    /// <summary>
-    /// Call whenever we want to start a grapple
-    /// </summary>
+  
     void StartGrapple()
     {
         RaycastHit hit;
@@ -60,11 +58,11 @@ public class GrapplingGun : MonoBehaviour
 
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
-            //The distance grapple will try to keep from grapple point. 
+     
             joint.maxDistance = distanceFromPoint * 0.8f;
             joint.minDistance = distanceFromPoint * 0.25f;
 
-            //Adjust these values to fit your game.
+           
             joint.spring = 8f;
             joint.damper = 20f;
             joint.massScale = 4.5f;
