@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Slide : MonoBehaviour
 {
     Rigidbody rig;
@@ -11,10 +11,20 @@ public class Slide : MonoBehaviour
     public PlayerMovement player;
     float originalHeight;
     public float reducedHeight;
+    
+    [Header("Stamina")]
+    [SerializeField] float totalStamina = 10;
+    [SerializeField] float currentStamina;
+    [SerializeField] public Slider staminaStats;
+    public float staminaValue;
+    public float slideSpeed;
+    public Text staminaUI;
 
-    public float slideSpeed ;
 
+    int staminaCount;
     bool isSliding;
+   
+
 
     
     void Start()
@@ -25,6 +35,7 @@ public class Slide : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GetComponent <PlayerMovement>();
 
+        currentStamina = totalStamina;
     }
 
     void Update()
@@ -35,26 +46,45 @@ public class Slide : MonoBehaviour
 
         else if (Input.GetKeyUp(KeyCode.C) && isSliding)
             GoUp();
+
+        currentStamina += Time.deltaTime;
+
+        if(currentStamina >= 10)
+        {
+            currentStamina = 10;
+        }
+        if(currentStamina <= 0)
+        {
+            currentStamina = 0;
+        }
+
+
+
+        staminaUI.text = string.Format("{0}", currentStamina);
     }
 
-        public void Sliding()
+    public void Sliding()
+    {
+        if(currentStamina >= 5)
         {
             col.height = reducedHeight;
-         
-            rig.AddForce(Camera.main.transform.forward * slideSpeed, ForceMode.VelocityChange);
-            isSliding = true;
+            currentStamina -= 3;
             
+            rig.AddForce(Camera.main.transform.forward * slideSpeed, ForceMode.VelocityChange);
+            
+            isSliding = true;
         }
+            
+    }
 
-        public void GoUp()
-        {
-          
-            col.height = originalHeight;
-            isSliding = false;
-        }
+    public void GoUp()
+    {
+        col.height = originalHeight;
+        isSliding = false;
+    } 
 
  
-    
+  
 }
 
 
