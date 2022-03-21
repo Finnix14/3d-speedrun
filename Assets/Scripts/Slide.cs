@@ -15,7 +15,7 @@ public class Slide : MonoBehaviour
     [Header("Stamina")]
     [SerializeField] float totalStamina = 10;
     [SerializeField] float currentStamina;
-    [SerializeField] public Slider staminaStats;
+    //[SerializeField] public Slider staminaStats;
     public float staminaValue;
     public float slideSpeed;
     public Text staminaUI;
@@ -23,10 +23,15 @@ public class Slide : MonoBehaviour
 
     int staminaCount;
     bool isSliding;
-   
 
 
-    
+    public float stamina;
+    float maxstamina;
+
+    public Slider staminaBar;
+    public float dValue;
+
+
     void Start()
     {
         col = GetComponent<CapsuleCollider>();
@@ -36,6 +41,8 @@ public class Slide : MonoBehaviour
         player = GetComponent <PlayerMovement>();
 
         currentStamina = totalStamina;
+        maxstamina = stamina;
+        staminaBar.maxValue = maxstamina;
     }
 
     void Update()
@@ -81,10 +88,18 @@ public class Slide : MonoBehaviour
     {
         col.height = originalHeight;
         isSliding = false;
-    } 
+    }
 
- 
-  
+    public void DecreaseEnergy()
+    {
+        if (stamina != 0)
+            stamina -= dValue * Time.deltaTime;
+    }
+    public void IncreaseEnergy()
+    {
+        stamina += dValue * Time.deltaTime;
+    }
+
 }
 
 
