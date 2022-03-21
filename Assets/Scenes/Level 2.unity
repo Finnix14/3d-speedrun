@@ -825,6 +825,10 @@ PrefabInstance:
       propertyPath: wallRunGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5571036361898661951, guid: 3acfdb6ca492d504e89e77a873fa34b0, type: 3}
+      propertyPath: staminaUI
+      value: 
+      objectReference: {fileID: 1441409660}
     - target: {fileID: 8584010796586312107, guid: 3acfdb6ca492d504e89e77a873fa34b0, type: 3}
       propertyPath: timer
       value: 
@@ -7567,6 +7571,17 @@ Transform:
   m_Father: {fileID: 1910124602}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &1441409660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 68144981561091522, guid: 10597cfe8ee04f449a4fd4248e2eb773, type: 3}
+  m_PrefabInstance: {fileID: 103232065}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1487022984
 GameObject:
   m_ObjectHideFlags: 0
