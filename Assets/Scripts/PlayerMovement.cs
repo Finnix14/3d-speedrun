@@ -55,7 +55,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource jumping;
 
     public GameObject nextlevelUI;
-    
+
+  
 
     private bool OnSlope()
     {
@@ -90,10 +91,10 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         ControlDrag();
         ControlSpeed();
-
+    
         if (Input.GetKeyDown(jumpKey) && isGrounded)
         {
-
+          
             Jump();
         }
 
@@ -116,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             jumping.Play();
+           
         }
     }
 

@@ -7525,6 +7525,7 @@ MonoBehaviour:
   groundDistance: 0.2
   jumping: {fileID: 8424271144486175931}
   nextlevelUI: {fileID: 0}
+  clouds: {fileID: 0}
 --- !u!114 &5663770916275371307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7580,7 +7581,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8424271144486175933}
   reducedHeight: 0.7
+  totalStamina: 10
+  currentStamina: 0
+  staminaBar: {fileID: 0}
+  staminaValue: 0
   slideSpeed: 20
+  stamina: 0
 --- !u!114 &5663770916275371301
 MonoBehaviour:
   m_ObjectHideFlags: 0
