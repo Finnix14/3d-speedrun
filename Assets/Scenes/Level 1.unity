@@ -988,6 +988,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 300916124625867358, guid: 8f312b3664ecb9c4f9fe669db2aca33b, type: 3}
   m_PrefabInstance: {fileID: 192833102}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &212571840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5663770914727893930, guid: 989f39a123a01e94094b0568f8909648, type: 3}
+  m_PrefabInstance: {fileID: 5663770915862276016}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee92089addfdae41ae8b400a0c01260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &311288878
 GameObject:
   m_ObjectHideFlags: 0
@@ -7017,6 +7028,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5663770915052139796, guid: 989f39a123a01e94094b0568f8909648, type: 3}
+      propertyPath: shotgun
+      value: 
+      objectReference: {fileID: 212571840}
     - target: {fileID: 5663770915052139796, guid: 989f39a123a01e94094b0568f8909648, type: 3}
       propertyPath: knifeimg
       value: 

@@ -9,7 +9,11 @@ public class WeaponSwitching : MonoBehaviour
     public GameObject knifeimg;
     public GameObject grappleimg;
     public GameObject shotgunimg;
+
+
     public GrapplingGun grapple;
+    public Shotgun shotgun;
+
     public AudioSource shotgunEquip;
     public AudioSource knifeEquip;
     public AudioSource grappleEquip;
@@ -39,6 +43,7 @@ public class WeaponSwitching : MonoBehaviour
             grappleimg.SetActive(false);
             shotgunimg.SetActive(false);
             grapple.StopGrapple();
+            shotgun.StopCoroutine("Reload");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)&& transform.childCount>= 2)
         {
@@ -49,7 +54,7 @@ public class WeaponSwitching : MonoBehaviour
             shotgunimg.SetActive(false);
             selectedWeapon = 1;
             grappleEquip.Play();
-            
+            shotgun.StopCoroutine("Reload");
 
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)

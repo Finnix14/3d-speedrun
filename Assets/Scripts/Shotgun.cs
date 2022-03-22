@@ -67,7 +67,7 @@ public class Shotgun : MonoBehaviour
                 
 
             }
-            if (Input.GetKeyDown(KeyCode.R) && player.isGrounded)
+            if (Input.GetKeyDown(KeyCode.R))
             {
                 if (currentAmmo <= 1)
                 {
@@ -80,13 +80,10 @@ public class Shotgun : MonoBehaviour
     }
     
     
-    IEnumerator Reload()
+    public IEnumerator Reload()
     {
-        if (player.isGrounded)
-        {
             anim.SetBool("Shoot", false);
-            
-
+           
             isReloading = true;
             animator.SetBool("Reloading", true); 
             yield return new WaitForSeconds(reloadTime - .25f);
@@ -95,7 +92,7 @@ public class Shotgun : MonoBehaviour
             currentAmmo = maxAmmo;
             isReloading = false;
             
-        }        
+               
     }
 
    void Shoot()
