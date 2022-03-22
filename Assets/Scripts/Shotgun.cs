@@ -40,6 +40,8 @@ public class Shotgun : MonoBehaviour
     {
         isReloading = false;
         animator.SetBool("Reloading", false);
+        animator.SetBool("Shoot", false);
+        animator.SetBool("Shoot2", false);
     }
 
 
@@ -59,8 +61,10 @@ public class Shotgun : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
             {
                 Shoot();
-
+                anim.SetBool("Shoot",true);
                 nextTimeToFire = Time.time + fireRate;
+                
+                
 
             }
             if (Input.GetKeyDown(KeyCode.R) && player.isGrounded)
@@ -80,6 +84,9 @@ public class Shotgun : MonoBehaviour
     {
         if (player.isGrounded)
         {
+            anim.SetBool("Shoot", false);
+            
+
             isReloading = true;
             animator.SetBool("Reloading", true); 
             yield return new WaitForSeconds(reloadTime - .25f);
@@ -87,23 +94,26 @@ public class Shotgun : MonoBehaviour
             yield return new WaitForSeconds(.25f);
             currentAmmo = maxAmmo;
             isReloading = false;
-          
+            
         }        
     }
 
    void Shoot()
-    {
+   {
+        anim.SetBool("Shoot2", true);
         currentAmmo--;
         muzzleflash.Play();
         shoot.Play();
         playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
-    }
+        
+   }
 
     void ReloadSFX()
     {
         reload.Play();
     }
 
+    
 
     
 }

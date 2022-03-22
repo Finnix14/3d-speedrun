@@ -31,22 +31,6 @@ public class WeaponSwitching : MonoBehaviour
     {
         int previousSelectedWeapon = selectedWeapon;
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
-        {
-           
-            if (selectedWeapon >= transform.childCount - 1)
-                selectedWeapon = 0;
-
-            
-            else
-                
-            selectedWeapon++;
-           
-        } 
-       
-      
-
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             knifeEquip.Play();
@@ -58,16 +42,21 @@ public class WeaponSwitching : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2)&& transform.childCount>= 2)
         {
+            knifeEquip.Stop();
+            shotgunEquip.Stop();
             knifeimg.SetActive(false);
             grappleimg.SetActive(true);
             shotgunimg.SetActive(false);
             selectedWeapon = 1;
             grappleEquip.Play();
-
+            
 
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
         {
+
+            knifeEquip.Stop();
+            grappleEquip.Stop();
             knifeimg.SetActive(false);
             grappleimg.SetActive(false);
             shotgunimg.SetActive(true);
