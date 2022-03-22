@@ -75,7 +75,7 @@ public class Slide : MonoBehaviour
 
     public void Sliding()
     {
-        if(currentStamina >= 0)
+        if(currentStamina >= 1.5f)
         {
             col.height = reducedHeight;
             currentStamina -= 3;

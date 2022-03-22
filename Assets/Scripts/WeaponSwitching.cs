@@ -18,11 +18,12 @@ public class WeaponSwitching : MonoBehaviour
     public AudioSource knifeEquip;
     public AudioSource grappleEquip;
 
+    public bool srReload;
     void Start()
     {
         selectWeapon();
-        anim = GetComponent<Animator>();
-        
+
+        srReload = true;
         knifeimg.SetActive(true);
         grappleimg.SetActive(false);
         shotgunimg.SetActive(false);
@@ -30,10 +31,17 @@ public class WeaponSwitching : MonoBehaviour
 
     }
 
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
         int previousSelectedWeapon = selectedWeapon;
+
+        
+        
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -45,7 +53,7 @@ public class WeaponSwitching : MonoBehaviour
             grapple.StopGrapple();
             shotgun.StopCoroutine("Reload");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2)&& transform.childCount>= 2)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
         {
             knifeEquip.Stop();
             shotgunEquip.Stop();
@@ -57,9 +65,11 @@ public class WeaponSwitching : MonoBehaviour
             shotgun.StopCoroutine("Reload");
 
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
         {
 
+            
             knifeEquip.Stop();
             grappleEquip.Stop();
             knifeimg.SetActive(false);
@@ -69,6 +79,10 @@ public class WeaponSwitching : MonoBehaviour
             grapple.StopGrapple();
             shotgunEquip.Play();
         }
+       
+
+
+
 
 
 

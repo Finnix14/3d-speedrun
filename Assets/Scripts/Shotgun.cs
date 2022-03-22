@@ -15,12 +15,12 @@ public class Shotgun : MonoBehaviour
     public ParticleSystem muzzleflash;
     public bool isShotgun = false;
     public AudioSource shoot;
-    float fireRate = 0.35f;
+    float fireRate = 0.60f;
     float nextTimeToFire;
 
     public int maxAmmo = 2;
     private int currentAmmo = 0;
-    public float reloadTime = 1.2f;
+    public float reloadTime = 1f;
     private bool isReloading = false;
 
     public Animator animator;
