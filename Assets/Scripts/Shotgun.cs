@@ -45,33 +45,34 @@ public class Shotgun : MonoBehaviour
 
     void Update()
     {
-        if (isReloading)
-            return;
-        
-        if(currentAmmo <= 0)
+        if (Time.timeScale == 1)
         {
-            StartCoroutine(Reload());
-            return;
-        }
+            if (isReloading)
+                return;
 
-        if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
-        {
-            Shoot();
-          
-            nextTimeToFire = Time.time + fireRate;
-           
-        }
-        if (Input.GetKeyDown(KeyCode.R)&& player.isGrounded)
-        {
-            if (currentAmmo <= 1)
+            if (currentAmmo <= 0)
             {
                 StartCoroutine(Reload());
                 return;
             }
 
+            if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
+            {
+                Shoot();
+
+                nextTimeToFire = Time.time + fireRate;
+
+            }
+            if (Input.GetKeyDown(KeyCode.R) && player.isGrounded)
+            {
+                if (currentAmmo <= 1)
+                {
+                    StartCoroutine(Reload());
+                    return;
+                }
+
+            }
         }
-
-
     }
     
     
