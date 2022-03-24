@@ -5115,7 +5115,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5722951283987170526}
   - component: {fileID: 5722951283987170520}
-  - component: {fileID: 5722951283987170527}
   - component: {fileID: 141230604819174877}
   - component: {fileID: 141230604819174873}
   - component: {fileID: 141230604819174874}
@@ -5165,25 +5164,6 @@ MonoBehaviour:
   knifeEquip: {fileID: 141230604819174873}
   grappleEquip: {fileID: 141230604819174874}
   srReload: 0
---- !u!95 &5722951283987170527
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5722951283987170525}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff20b00988f3a8044a07a038f6dea8be, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &141230604819174877
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5711,7 +5691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 10
-  multiplier: 10
+  multiplier: 5
 --- !u!1 &5722951284571607633
 GameObject:
   m_ObjectHideFlags: 0
@@ -6300,13 +6280,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5722951284635560997}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.061400544, y: -0, z: -2.3283062e-10, w: 0.9981132}
   m_LocalPosition: {x: 0.1, y: 2.59, z: -8.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5722951285751514126}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -7.04, y: 0, z: 0}
 --- !u!120 &5722951284635560994
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -6425,7 +6405,7 @@ MonoBehaviour:
   player: {fileID: 5722951285213023471}
   shoot: {fileID: 5722951284635560999}
   gunshoot: {fileID: 5427167786870672087}
-  reloadingpistol: {fileID: 5427167786870672087}
+  reloadingpistol: {fileID: 8874174615554083943}
   maxAmmo: 10
   currentAmmo: 10
   reloadTime: 1
@@ -6436,7 +6416,6 @@ MonoBehaviour:
   fpsCam: {fileID: 5722951285522800928}
   muzzleflash: {fileID: 6763459678901582826}
   isGrapple: 0
-  launchForce: -5
   playerRig: {fileID: 5722951285213023464}
   anim: {fileID: 5722951284635560992}
 --- !u!95 &5722951284635560992
@@ -6470,7 +6449,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -1857222576850892745, guid: 359bd1e7a4477d34c89b8227260255ce, type: 2}
   m_audioClip: {fileID: 8300000, guid: ca254df3dfb6d364c94fa68bc658cac6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.712
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6566,7 +6545,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -1857222576850892745, guid: 359bd1e7a4477d34c89b8227260255ce, type: 2}
   m_audioClip: {fileID: 8300000, guid: a8707a4196bded54e9ff76586f89a71d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.839
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6659,7 +6638,7 @@ AudioSource:
   m_GameObject: {fileID: 5722951284635560997}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1857222576850892745, guid: 359bd1e7a4477d34c89b8227260255ce, type: 2}
   m_audioClip: {fileID: 8300000, guid: 818e2c5389cbf6b4f9465429937f7ea7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

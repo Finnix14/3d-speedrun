@@ -34,7 +34,6 @@ public class GrapplingGun : MonoBehaviour
 
     public bool isGrapple;
 
-    public float launchForce;
     public Rigidbody playerRig;
     public Animator anim;
 
@@ -144,7 +143,6 @@ public class GrapplingGun : MonoBehaviour
                 muzzleflash.Play();
                 currentAmmo--;
                 gunshoot.Play();
-                playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
                 RaycastHit hitInfo;
                 if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
                 {
@@ -228,8 +226,9 @@ public class GrapplingGun : MonoBehaviour
         {
             isReloading = true;
             anim.SetTrigger("Reloading");
-            reloadingpistol.Play();
+            
             yield return new WaitForSeconds(reloadTime - .25f);
+            reloadingpistol.Play();
             yield return new WaitForSeconds(.25f);
           
             currentAmmo = maxAmmo;

@@ -91,15 +91,6 @@ public class WeaponSwitching : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            KnifeInspect();
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            KnifeSpin();
-        }
 
     }
 
@@ -118,16 +109,7 @@ public class WeaponSwitching : MonoBehaviour
 
         }
     }
-    void KnifeInspect()
-    {
-        anim.Play("weaponflip");
-            
-    }
 
-    void KnifeSpin()
-    {
-        anim.Play("knifespin");
-    }
 
  
   
