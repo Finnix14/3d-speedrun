@@ -228,6 +228,7 @@ public class GrapplingGun : MonoBehaviour
         {
             isReloading = true;
             anim.SetTrigger("Reloading");
+            reloadingpistol.Play();
             yield return new WaitForSeconds(reloadTime - .25f);
             yield return new WaitForSeconds(.25f);
           
