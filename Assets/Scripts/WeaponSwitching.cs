@@ -51,7 +51,7 @@ public class WeaponSwitching : MonoBehaviour
             grappleimg.SetActive(false);
             shotgunimg.SetActive(false);
             grapple.StopGrapple();
-            shotgun.StopCoroutine("Reload");
+          
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
         {
@@ -62,14 +62,13 @@ public class WeaponSwitching : MonoBehaviour
             shotgunimg.SetActive(false);
             selectedWeapon = 1;
             grappleEquip.Play();
-            shotgun.StopCoroutine("Reload");
+        
 
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
         {
-
-            
+        
             knifeEquip.Stop();
             grappleEquip.Stop();
             knifeimg.SetActive(false);

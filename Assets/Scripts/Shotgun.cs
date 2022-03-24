@@ -8,12 +8,15 @@ public class Shotgun : MonoBehaviour
     CapsuleCollider col;
     Camera cam;
     public PlayerMovement player;
+
     public GameObject shotgun;
     public Rigidbody playerRig;
     public Animator anim;
+
     public float launchForce;
     public ParticleSystem muzzleflash;
     public bool isShotgun = false;
+
     public AudioSource shoot;
     float fireRate = 0.60f;
     float nextTimeToFire;
@@ -21,13 +24,15 @@ public class Shotgun : MonoBehaviour
     public int maxAmmo = 2;
     private int currentAmmo = 0;
     public float reloadTime = 1f;
-    private bool isReloading = false;
 
+    private bool isReloading = false;
     public Animator animator;
     public AudioSource reload;
 
 
-
+    [SerializeField] int damage = 100;
+    [SerializeField] int range = 100;
+    [SerializeField] Camera fpsCam;
 
     void Start()
     {
@@ -39,9 +44,7 @@ public class Shotgun : MonoBehaviour
     void OnEnable()
     {
         isReloading = false;
-        animator.SetBool("Reloading", false);
-        animator.SetBool("Shoot", false);
-        animator.SetBool("Shoot2", false);
+       
     }
 
 
@@ -61,11 +64,8 @@ public class Shotgun : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
             {
                 Shoot();
-                anim.SetBool("Shoot",true);
+                anim.SetTrigger("Shoot");
                 nextTimeToFire = Time.time + fireRate;
-                
-                
-
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -78,39 +78,42 @@ public class Shotgun : MonoBehaviour
             }
         }
     }
-    
-    
+
+
     public IEnumerator Reload()
     {
-            anim.SetBool("Shoot", false);
-           
+        if (player.isGrounded)
+        {
             isReloading = true;
-            animator.SetBool("Reloading", true); 
+            animator.SetTrigger("Reloading");
             yield return new WaitForSeconds(reloadTime - .25f);
-            animator.SetBool("Reloading", false);
             yield return new WaitForSeconds(.25f);
             currentAmmo = maxAmmo;
             isReloading = false;
-            
-               
+        }
     }
 
-   void Shoot()
-   {
-        anim.SetBool("Shoot2", true);
+    void Shoot()
+    {
+        anim.SetBool("Shoot", true);
         currentAmmo--;
         muzzleflash.Play();
         shoot.Play();
         playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
-        
-   }
+        RaycastHit hitInfo;
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
+        {
 
-    void ReloadSFX()
-    {
-        reload.Play();
+            Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
+        }
+
     }
 
-    
 
-    
+
+
 }
