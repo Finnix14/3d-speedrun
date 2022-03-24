@@ -22,7 +22,7 @@ public class Shotgun : MonoBehaviour
     float nextTimeToFire;
 
     public int maxAmmo = 2;
-    private int currentAmmo = 0;
+    public int currentAmmo = 0;
     public float reloadTime = 1f;
 
     private bool isReloading = false;
