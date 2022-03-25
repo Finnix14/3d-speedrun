@@ -95,7 +95,7 @@ public class Shotgun : MonoBehaviour
 
     void Shoot()
     {
-        anim.SetBool("Shoot", true);
+
         currentAmmo--;
         muzzleflash.Play();
         shoot.Play();
