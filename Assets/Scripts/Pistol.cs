@@ -2,28 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shotgun : MonoBehaviour
+public class Pistol : MonoBehaviour
 {
-
-    CapsuleCollider col;
-    Camera cam;
-    public PlayerMovement player;
-
-    public GameObject shotgun;
-    public Rigidbody playerRig;
-    public Animator anim;
-
-    public float launchForce;
     public ParticleSystem muzzleflash;
-    public bool isShotgun = false;
-
     public AudioSource shoot;
-    float fireRate = 0.60f;
+    float fireRate = 0.6f;
     float nextTimeToFire;
 
-    public int maxAmmo = 2;
+    public PlayerMovement player;
+
+    public int maxAmmo = 8;
     public int currentAmmo = 0;
-    public float reloadTime = 1f;
+    public float reloadTime = 1.2f;
 
     private bool isReloading = false;
     public Animator animator;
@@ -34,19 +24,15 @@ public class Shotgun : MonoBehaviour
     [SerializeField] int range = 100;
     [SerializeField] Camera fpsCam;
 
+
     void Start()
     {
-        col = GetComponent<CapsuleCollider>();
-        shoot = GetComponent<AudioSource>();
         currentAmmo = maxAmmo;
     }
-
     void OnEnable()
     {
         isReloading = false;
-       
     }
-
 
     void Update()
     {
@@ -64,12 +50,12 @@ public class Shotgun : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
             {
                 Shoot();
-                anim.SetTrigger("Shoot");
+                animator.SetTrigger("GunShoot");
                 nextTimeToFire = Time.time + fireRate;
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if (currentAmmo <= 1)
+                if (currentAmmo <= 7)
                 {
                     StartCoroutine(Reload());
                     return;
@@ -85,7 +71,7 @@ public class Shotgun : MonoBehaviour
         if (player.isGrounded)
         {
             isReloading = true;
-            animator.SetTrigger("Reloading");
+            animator.SetTrigger("Reload");
             yield return new WaitForSeconds(reloadTime - .25f);
             yield return new WaitForSeconds(.25f);
             currentAmmo = maxAmmo;
@@ -95,29 +81,27 @@ public class Shotgun : MonoBehaviour
 
     void Shoot()
     {
-        anim.SetBool("Shoot", true);
-        currentAmmo--;
-        muzzleflash.Play();
-        shoot.Play();
-        playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
+        if (isReloading == false)
         {
-
-            Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
-            if (enemy != null)
+            currentAmmo--;
+            muzzleflash.Play();
+            shoot.Play();
+            RaycastHit hitInfo;
+            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
             {
-                enemy.TakeDamage(damage);
+
+                Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+                }
             }
         }
-
     }
+
 
     void ReloadSFX()
     {
         reload.Play();
     }
-
-
-
 }

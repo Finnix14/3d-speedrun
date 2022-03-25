@@ -6,10 +6,9 @@ public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
     Animator anim;
-    public GameObject knifeimg;
     public GameObject grappleimg;
     public GameObject shotgunimg;
-
+    public GameObject pistolimg;
 
     public GrapplingGun grapple;
     public Shotgun shotgun;
@@ -24,10 +23,10 @@ public class WeaponSwitching : MonoBehaviour
         selectWeapon();
 
         srReload = true;
-        knifeimg.SetActive(true);
-        grappleimg.SetActive(false);
+    
+        grappleimg.SetActive(true);
         shotgunimg.SetActive(false);
-        
+        pistolimg.SetActive(false);
 
     }
 
@@ -42,40 +41,47 @@ public class WeaponSwitching : MonoBehaviour
 
         if (Time.timeScale == 1)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+   
+            if (Input.GetKeyDown(KeyCode.Alpha1) && transform.childCount >= 1)
             {
-                knifeEquip.Play();
-                selectedWeapon = 0;
-                knifeimg.SetActive(true);
-                grappleimg.SetActive(false);
-                shotgunimg.SetActive(false);
-                grapple.StopGrapple();
-
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
-            {
-                knifeEquip.Stop();
-                shotgunEquip.Stop();
-                knifeimg.SetActive(false);
+               // knifeEquip.Stop();
+              //  shotgunEquip.Stop();
+     
                 grappleimg.SetActive(true);
                 shotgunimg.SetActive(false);
+                pistolimg.SetActive(false);
                 selectedWeapon = 1;
-                grappleEquip.Play();
+              //  grappleEquip.Play();
 
 
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
+            {
+
+               // knifeEquip.Stop();
+              //  grappleEquip.Stop();
+
+                grappleimg.SetActive(false);
+                shotgunimg.SetActive(true);
+                pistolimg.SetActive(false);
+                selectedWeapon = 2;
+                grapple.StopGrapple();
+              //  shotgunEquip.Play();
+            }
+
 
             if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
             {
 
-                knifeEquip.Stop();
-                grappleEquip.Stop();
-                knifeimg.SetActive(false);
                 grappleimg.SetActive(false);
-                shotgunimg.SetActive(true);
-                selectedWeapon = 2;
+                shotgunimg.SetActive(false);
+                pistolimg.SetActive(true);
+               // knifeEquip.Stop();
+                //grappleEquip.Stop();
+                selectedWeapon = 3;
                 grapple.StopGrapple();
-                shotgunEquip.Play();
+                //grappleEquip.Play();
             }
         }
 

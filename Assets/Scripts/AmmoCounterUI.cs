@@ -5,16 +5,19 @@ public class AmmoCounterUI : MonoBehaviour
 {
 
     [SerializeField] TMP_Text ammoCountershotgun;
+    [SerializeField] TMP_Text ammoCounterpistol;
 
     [SerializeField] GameObject shotgunObj;
+    [SerializeField] GameObject pistolObj;
 
     [SerializeField] Shotgun shotgun;
+    [SerializeField] Pistol pistol;
 
 
     void Update()
     {
         ShotgunUI();
-    
+        GunUI();
     }
 
 
@@ -25,9 +28,17 @@ public class AmmoCounterUI : MonoBehaviour
         else
             ammoCountershotgun.text = string.Empty;
     }
-    
-    
-    
-    
- 
+
+    void GunUI()
+    {
+        if (pistolObj.activeInHierarchy)
+            ammoCounterpistol.text = string.Format("{0}/{1}", pistol.currentAmmo, pistol.maxAmmo);
+        else
+            ammoCounterpistol.text = string.Empty;
+    }
+
+
+
+
+
 }
