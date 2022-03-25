@@ -808,11 +808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b9a6e4e875f61429d2fa95ab460075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCounterpistol: {fileID: 6756927408769552157}
   ammoCountershotgun: {fileID: 5248817423443518767}
-  gunObj: {fileID: 0}
   shotgunObj: {fileID: 0}
-  gun: {fileID: 0}
   shotgun: {fileID: 0}
 --- !u!1 &1488399727209551386
 GameObject:
@@ -1974,7 +1971,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &2773150390720663235
+--- !u!1 &3419777294997643700
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1982,51 +1979,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8752021587899539043}
-  - component: {fileID: 4453602316269673972}
-  - component: {fileID: 6756927408769552157}
-  - component: {fileID: 7289166822778293151}
+  - component: {fileID: 9145674684032918568}
+  - component: {fileID: 5876049639974759879}
+  - component: {fileID: 8123939482117332017}
   m_Layer: 5
-  m_Name: Ammo
+  m_Name: infinate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8752021587899539043
+--- !u!224 &9145674684032918568
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2773150390720663235}
+  m_GameObject: {fileID: 3419777294997643700}
   m_LocalRotation: {x: -0, y: 0, z: 0.095845714, w: 0.99539626}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.777203, y: 0.7681639, z: 0.76781327}
+  m_LocalScale: {x: 0.77107215, y: 0.76816446, z: 0.7678138}
   m_Children: []
   m_Father: {fileID: 5489972985411116874}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -9.111, y: 40.9828}
-  m_SizeDelta: {x: 105.2405, y: 26.3729}
+  m_AnchoredPosition: {x: 19.13623, y: 46.40461}
+  m_SizeDelta: {x: 31.7, y: 26.3729}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &4453602316269673972
+--- !u!222 &5876049639974759879
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2773150390720663235}
+  m_GameObject: {fileID: 3419777294997643700}
   m_CullTransparentMesh: 1
---- !u!114 &6756927408769552157
+--- !u!114 &8123939482117332017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2773150390720663235}
+  m_GameObject: {fileID: 3419777294997643700}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -2040,7 +2036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10/10
+  m_text: "\u221E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -2109,24 +2105,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7289166822778293151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2773150390720663235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2b9a6e4e875f61429d2fa95ab460075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoCounterpistol: {fileID: 6756927408769552157}
-  ammoCountershotgun: {fileID: 5248817423443518767}
-  gunObj: {fileID: 0}
-  shotgunObj: {fileID: 0}
-  gun: {fileID: 0}
-  shotgun: {fileID: 0}
 --- !u!1 &3471365324038309872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3357,7 +3335,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -3.5, y: 3.5444398, z: 3.5444398}
   m_Children:
-  - {fileID: 8752021587899539043}
+  - {fileID: 9145674684032918568}
   m_Father: {fileID: 5440768257928323645}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11}

@@ -40,50 +40,44 @@ public class WeaponSwitching : MonoBehaviour
     {
         int previousSelectedWeapon = selectedWeapon;
 
-        
-        
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Time.timeScale == 1)
         {
-            knifeEquip.Play();
-            selectedWeapon = 0;
-            knifeimg.SetActive(true);
-            grappleimg.SetActive(false);
-            shotgunimg.SetActive(false);
-            grapple.StopGrapple();
-          
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                knifeEquip.Play();
+                selectedWeapon = 0;
+                knifeimg.SetActive(true);
+                grappleimg.SetActive(false);
+                shotgunimg.SetActive(false);
+                grapple.StopGrapple();
+
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
+            {
+                knifeEquip.Stop();
+                shotgunEquip.Stop();
+                knifeimg.SetActive(false);
+                grappleimg.SetActive(true);
+                shotgunimg.SetActive(false);
+                selectedWeapon = 1;
+                grappleEquip.Play();
+
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
+            {
+
+                knifeEquip.Stop();
+                grappleEquip.Stop();
+                knifeimg.SetActive(false);
+                grappleimg.SetActive(false);
+                shotgunimg.SetActive(true);
+                selectedWeapon = 2;
+                grapple.StopGrapple();
+                shotgunEquip.Play();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
-        {
-            knifeEquip.Stop();
-            shotgunEquip.Stop();
-            knifeimg.SetActive(false);
-            grappleimg.SetActive(true);
-            shotgunimg.SetActive(false);
-            selectedWeapon = 1;
-            grappleEquip.Play();
-        
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
-        {
-        
-            knifeEquip.Stop();
-            grappleEquip.Stop();
-            knifeimg.SetActive(false);
-            grappleimg.SetActive(false);
-            shotgunimg.SetActive(true);
-            selectedWeapon = 2;
-            grapple.StopGrapple();
-            shotgunEquip.Play();
-        }
-       
-
-
-
-
-
 
         if (previousSelectedWeapon != selectedWeapon)
         {

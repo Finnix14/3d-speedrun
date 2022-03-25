@@ -3,18 +3,18 @@ using UnityEngine.UI;
 using TMPro;
 public class AmmoCounterUI : MonoBehaviour
 {
-    [SerializeField] TMP_Text ammoCounterpistol;
+
     [SerializeField] TMP_Text ammoCountershotgun;
-    [SerializeField] GameObject gunObj;
+
     [SerializeField] GameObject shotgunObj;
-    [SerializeField] GrapplingGun gun;
+
     [SerializeField] Shotgun shotgun;
 
 
     void Update()
     {
         ShotgunUI();
-        GunUI();
+    
     }
 
 
@@ -29,12 +29,5 @@ public class AmmoCounterUI : MonoBehaviour
     
     
     
-    void GunUI()
-    {
-        if (gunObj.activeInHierarchy)
-            ammoCounterpistol.text = string.Format("{0}/{1}", gun.currentAmmo, gun.maxAmmo);
-        else
-            ammoCounterpistol.text = string.Empty;
-  
-    }
+ 
 }

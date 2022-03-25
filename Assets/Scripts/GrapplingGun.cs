@@ -16,19 +16,11 @@ public class GrapplingGun : MonoBehaviour
     public AudioSource gunshoot;
     public AudioSource reloadingpistol;
 
-    public int maxAmmo = 10;
-    public int currentAmmo = 0;
-    public float reloadTime = 2f;
-    public bool isReloading = false;
-    float fireRate = 0.08f;
-    float nextTimeToFire;
 
     public PlayerMovement playermove;
 
 
-    [SerializeField] int damage = 10;
-    [SerializeField] int range = 100;
-    [SerializeField] Camera fpsCam;
+
 
     public ParticleSystem muzzleflash;
 
@@ -45,55 +37,27 @@ public class GrapplingGun : MonoBehaviour
         isGrapple = false;
        
     }
-    void Start()
-    {  if (currentAmmo == -1) 
-        currentAmmo = maxAmmo;
 
-
-    }
 
     void Update()
     {
 
 
-        if (isReloading)
-            return;
-        {
-            if (currentAmmo <= 0)
-            {
-                StartCoroutine(Reload());
-                return;
-            }
-
             if (Time.timeScale == 1)
             {
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButtonDown(0))
                 {
                     StartGrapple();
 
                 }
-                else if (Input.GetMouseButtonUp(1))
+                else if (Input.GetMouseButtonUp(0))
                 {
                     StopGrapple();
 
                 }
 
-                if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
-                {
-                    Shoot();
-                    nextTimeToFire = Time.time + fireRate;
-                }
-                if (Input.GetKeyDown(KeyCode.R))
-                {
-                    if (currentAmmo <= 9)
-                    {
-                        StartCoroutine(Reload());
-                        return;
-                    }
-
-                }
             } 
-        }
+        
          
     }
 
@@ -112,6 +76,7 @@ public class GrapplingGun : MonoBehaviour
         {
             isGrapple = true;
             shoot.Play();
+            muzzleflash.Play();
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
@@ -133,40 +98,6 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
-    void Shoot()
-    {
-        if(currentAmmo >= 1)
-        {
-            if (isGrapple == false)
-            {
-                anim.SetTrigger("Shoot");
-                muzzleflash.Play();
-                currentAmmo--;
-                gunshoot.Play();
-                RaycastHit hitInfo;
-                if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
-                {
-
-                    Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
-                    if (enemy != null)
-                    {
-                        enemy.TakeDamage(damage);
-                    }
-                }
-            }
-
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (currentAmmo <= 9)
-            {
-                StartCoroutine(Reload());
-                return;
-            }
-
-        }
-
-    }
 
     void KnifeInspect()
     {
@@ -219,25 +150,6 @@ public class GrapplingGun : MonoBehaviour
     {
         return grapplePoint;
     }
-    public IEnumerator Reload()
-    {
-     
-        if (playermove.isGrounded)
-        {
-            isReloading = true;
-            anim.SetTrigger("Reload");
-            
-            yield return new WaitForSeconds(reloadTime - .25f);
-            reloadingpistol.Play();
-            yield return new WaitForSeconds(.25f);
-          
-            currentAmmo = maxAmmo;
-            isReloading = false;
-        }
-    }
-    public void pistolreloading()
-    {
-        reloadingpistol.Play();
-    }
+
 
 }
