@@ -221,11 +221,11 @@ public class GrapplingGun : MonoBehaviour
     }
     public IEnumerator Reload()
     {
-        Debug.Log("Reloading");
+     
         if (playermove.isGrounded)
         {
             isReloading = true;
-            anim.SetTrigger("Reloading");
+            anim.SetTrigger("Reload");
             
             yield return new WaitForSeconds(reloadTime - .25f);
             reloadingpistol.Play();
