@@ -5587,7 +5587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
-  knifeimg: {fileID: 0}
   grappleimg: {fileID: 0}
   shotgunimg: {fileID: 0}
   pistolimg: {fileID: 0}
