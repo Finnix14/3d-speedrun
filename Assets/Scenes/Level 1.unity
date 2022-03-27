@@ -7389,10 +7389,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5134870982582099146, guid: 989f39a123a01e94094b0568f8909648, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1857222576850892745, guid: 359bd1e7a4477d34c89b8227260255ce, type: 2}
+    - target: {fileID: 5427167786870672087, guid: 989f39a123a01e94094b0568f8909648, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5722951283987170520, guid: 989f39a123a01e94094b0568f8909648, type: 3}
       propertyPath: knifeimg
       value: 
-      objectReference: {fileID: 6034084301932870195}
+      objectReference: {fileID: 0}
     - target: {fileID: 5722951283987170520, guid: 989f39a123a01e94094b0568f8909648, type: 3}
       propertyPath: pistolimg
       value: 
@@ -7477,6 +7485,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8167746640901100552, guid: 989f39a123a01e94094b0568f8909648, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1857222576850892745, guid: 359bd1e7a4477d34c89b8227260255ce, type: 2}
     - target: {fileID: 8438836973696251249, guid: 989f39a123a01e94094b0568f8909648, type: 3}
       propertyPath: timer
       value: 
@@ -7560,11 +7572,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddae9626daf686d49a893d57caa25ecb, type: 3}
---- !u!1 &6034084301932870195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5818313347732667827, guid: 10597cfe8ee04f449a4fd4248e2eb773, type: 3}
-  m_PrefabInstance: {fileID: 217178398693050240}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6359785558490607891 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6575798474304992915, guid: 10597cfe8ee04f449a4fd4248e2eb773, type: 3}
