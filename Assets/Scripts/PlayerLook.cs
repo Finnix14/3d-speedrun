@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
+
+
     [Header("References")]
     [SerializeField] WallRun wallRun;
 
-    [SerializeField]  public float sensX = 100f;
-    [SerializeField]  public float sensY = 100f;
+    [SerializeField] public float sensX = 100f;
+    [SerializeField] public float sensY = 100f;
 
     [SerializeField] Transform cam = null;
     [SerializeField] public Transform orientation = null;
+
+    [SerializeField] Camera fpscam;
+    public PlayerLook look;
 
     float mouseX;
     float mouseY;
@@ -24,16 +29,20 @@ public class PlayerLook : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            
-    
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        fpscam = Camera.main;
+        transform.rotation = Quaternion.Euler(mouseX, mouseY, transform.rotation.eulerAngles.z);
+
     }
 
     private void Update()
     {
         if (!PauseMenu.isPaused)
         {
+
+
             mouseX = Input.GetAxisRaw("Mouse X");
             mouseY = Input.GetAxisRaw("Mouse Y");
 
@@ -45,8 +54,8 @@ public class PlayerLook : MonoBehaviour
             cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, wallRun.tilt);
             orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
         }
-        
+
     }
 
- 
+
 }

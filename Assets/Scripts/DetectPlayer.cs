@@ -46,6 +46,7 @@ public class DetectPlayer : MonoBehaviour
         {
             detected = true;
             target = other.gameObject;
+      
         }
     }
 
