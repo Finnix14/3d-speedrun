@@ -7,7 +7,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] Rigidbody enemyrig;
     public float launchForce;
 
+    public Animator enemyAnim;
+
     public AudioSource hitnoise;
+
+
     public void TakeDamage(float dmgAmount)
     {
         health -= dmgAmount;
@@ -23,8 +27,9 @@ public class Enemy : MonoBehaviour
     public IEnumerator EnemyDie()
     {
         hitnoise.Play();
-        enemyrig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
-        yield return new WaitForSeconds(1f);
+        enemyAnim.SetTrigger("Dying");
+        //enemyrig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
 }
