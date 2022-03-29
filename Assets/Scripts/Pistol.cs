@@ -19,8 +19,9 @@ public class Pistol : MonoBehaviour
     public Animator animator;
     public AudioSource reload;
 
+    Ray ray;
 
-    [SerializeField] int damage = 100;
+    public float damage = 100;
     [SerializeField] int range = 100;
     [SerializeField] Camera fpsCam;
 
@@ -95,6 +96,7 @@ public class Pistol : MonoBehaviour
                 {
                     enemy.TakeDamage(damage);
                 }
+
             }
         }
     }

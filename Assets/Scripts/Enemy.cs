@@ -27,8 +27,7 @@ public class Enemy : MonoBehaviour
     public IEnumerator EnemyDie()
     {
         hitnoise.Play();
-        enemyAnim.SetTrigger("Dying");
-        //enemyrig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
+        enemyrig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
