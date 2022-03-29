@@ -7385,7 +7385,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -7483,6 +7483,8 @@ MonoBehaviour:
   sprintSpeed: 7
   acceleration: 10
   jumpForce: 16
+  checkOffset: 1
+  checkRadius: 2
   jumpKey: 32
   sprintKey: 304
   groundDrag: 6
@@ -7511,8 +7513,8 @@ MonoBehaviour:
   sensY: 400
   cam: {fileID: 5722951285195595820}
   orientation: {fileID: 5722951285128731730}
-  fpscam: {fileID: 0}
-  look: {fileID: 0}
+  fpscam: {fileID: 5722951285522800928}
+  look: {fileID: 5722951285213023463}
 --- !u!114 &5722951285213023462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12975,7 +12977,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
