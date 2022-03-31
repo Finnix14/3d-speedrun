@@ -8,11 +8,15 @@ public class FPSDisplay : MonoBehaviour
 
     public void Update ()
     {
-        float current = 0;
-        current = Time.frameCount / Time.time;
-        avgFrameRate = (int)current;
-        display_Text.text = avgFrameRate.ToString();
+        
+        if(Time.timeScale == 1)
+        {
 
+            float current = 0;
+            current = Time.frameCount / Time.time;
+            avgFrameRate = (int)current;
+            display_Text.text = avgFrameRate.ToString() + "FPS";
+        }
 
     }
 }
