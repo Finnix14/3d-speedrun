@@ -1,6 +1,4 @@
-
 using UnityEngine;
-
 
 public class GunCollectable : MonoBehaviour
 {
@@ -13,10 +11,14 @@ public class GunCollectable : MonoBehaviour
     public float dropForwardForce, dropUpwardForce;
 
     public bool equipped;
-    public static bool slotFull;
+    public bool slotFull;
+    public Animator anim;
 
+    public GameObject weaponUI;
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         //gun setup if player does not start with gun.
         if (!equipped)
         {
@@ -68,36 +70,39 @@ public class GunCollectable : MonoBehaviour
 
         //enable gun script.
         playerGun.enabled = true;
+        anim.GetComponent<Animator>().enabled = true;
     }
 
-    void Drop()
+    public void Drop()
     {
-        if (!playerGun.reload)
-        {
-            //make these false so player can pick up gun.
-            equipped = false;
-            slotFull = false;
 
-            //set parent to null.
-            transform.SetParent(null);
+        weaponUI.SetActive(false);
+        //make these false so player can pick up gun.
+        equipped = false;
+        slotFull = false;
 
-            //reset rb and collider trigger.
-            rb.isKinematic = false;
-            coll.isTrigger = false;
+        //set parent to null.
+        transform.SetParent(null);
 
-            //gun carries force by player.
-            rb.velocity = player.GetComponent<Rigidbody>().velocity;
+        //reset rb and collider trigger.
+        rb.isKinematic = false;
+        coll.isTrigger = false;
 
-            //apply force.
-            rb.AddForce(fpsCam.forward * dropForwardForce, ForceMode.Impulse);
-            rb.AddForce(fpsCam.up * dropUpwardForce, ForceMode.Impulse);
+        //gun carries force by player.
+        rb.velocity = player.GetComponent<Rigidbody>().velocity;
 
-            //add random rotation when thrown. (Opt.)
-            float r = Random.Range(-1f, 1f);
-            rb.AddTorque(new Vector3(r, r, r) * 10);
+        //apply force.
+        rb.AddForce(fpsCam.forward * dropForwardForce, ForceMode.Impulse);
+        rb.AddForce(fpsCam.up * dropUpwardForce, ForceMode.Impulse);
 
-            //disable script.
-            playerGun.enabled = false;
-        }
+        //add random rotation when thrown. (Opt.)
+        float r = Random.Range(-1f, 1f);
+        rb.AddTorque(new Vector3(r, r, r) * 10);
+
+        //disable script.
+        playerGun.enabled = false;
+        anim.GetComponent<Animator>().enabled = false;
+
+
     }
 }

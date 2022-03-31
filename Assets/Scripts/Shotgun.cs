@@ -23,12 +23,12 @@ public class Shotgun : MonoBehaviour
 
     public int maxAmmo = 2;
     public int currentAmmo = 0;
-    public float reloadTime = 1f;
 
-    private bool isReloading = false;
+
     public Animator animator;
-    public AudioSource reload;
 
+    public GameObject weaponUI;
+    public GunCollectable gunthrow;
 
     [SerializeField] int damage = 100;
     [SerializeField] int range = 100;
@@ -43,7 +43,7 @@ public class Shotgun : MonoBehaviour
 
     void OnEnable()
     {
-        isReloading = false;
+      
        
     }
 
@@ -52,12 +52,11 @@ public class Shotgun : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
-            if (isReloading)
-                return;
-
+          
             if (currentAmmo <= 0)
             {
-                StartCoroutine(Reload());
+                gunthrow.Drop();
+                weaponUI.SetActive(false);
                 return;
             }
 
@@ -67,31 +66,12 @@ public class Shotgun : MonoBehaviour
                 anim.SetTrigger("Shoot");
                 nextTimeToFire = Time.time + fireRate;
             }
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                if (currentAmmo <= 1)
-                {
-                    StartCoroutine(Reload());
-                    return;
-                }
 
-            }
         }
     }
 
 
-    public IEnumerator Reload()
-    {
-        if (player.isGrounded)
-        {
-            isReloading = true;
-            animator.SetTrigger("Reloading");
-            yield return new WaitForSeconds(reloadTime - .25f);
-            yield return new WaitForSeconds(.25f);
-            currentAmmo = maxAmmo;
-            isReloading = false;
-        }
-    }
+
 
     void Shoot()
     {
@@ -113,10 +93,6 @@ public class Shotgun : MonoBehaviour
 
     }
 
-    void ReloadSFX()
-    {
-        reload.Play();
-    }
 
 
 
