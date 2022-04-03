@@ -14,7 +14,6 @@ public class GrapplingGun : MonoBehaviour
     private SpringJoint joint;
     public AudioSource shoot;
     public AudioSource gunshoot;
-    public AudioSource reloadingpistol;
 
 
     public PlayerMovement playermove;
@@ -62,12 +61,6 @@ public class GrapplingGun : MonoBehaviour
     }
 
 
-    void LateUpdate()
-    {
-        DrawRope();
-    }
-
-
     void StartGrapple()
     {
         RaycastHit hit;
@@ -92,28 +85,11 @@ public class GrapplingGun : MonoBehaviour
             joint.spring = 8f;
             joint.damper = 20f;
             joint.massScale = 4.5f;
-
-            lr.positionCount = 2;
-            currentGrapplePosition = gunTip.position;
         }
     }
 
 
-    void KnifeInspect()
-    {
-        if (Input.GetKey(KeyCode.Y))
-        {
-            anim.Play("spin");
-        }
-    }
-
-    void KnifeSpin()
-    {
-        if (Input.GetKey(KeyCode.F))
-        {
-            anim.Play("knifespin");
-        }
-    }
+   
 
     void shootGrapple()
     {
@@ -129,17 +105,6 @@ public class GrapplingGun : MonoBehaviour
         Destroy(joint);
     }
 
-    private Vector3 currentGrapplePosition;
-
-    void DrawRope()
-    {
-        if (!joint) return;
-
-        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
-
-        lr.SetPosition(0, gunTip.position);
-        lr.SetPosition(1, currentGrapplePosition);
-    }
 
     public bool IsGrappling()
     {

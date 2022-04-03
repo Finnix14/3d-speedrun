@@ -16442,6 +16442,7 @@ GameObject:
   - component: {fileID: 305450405255617707}
   - component: {fileID: 3768218852580645403}
   - component: {fileID: 8502438835766480616}
+  - component: {fileID: 1317894748}
   m_Layer: 9
   m_Name: ShootPoint
   m_TagString: Untagged
@@ -16559,6 +16560,58 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1317894748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317894745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a4dae972121e145ba748f51f00f2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grapplingGun: {fileID: 1317894749}
+  quality: 500
+  damper: 14
+  strength: 800
+  Velocity: 5
+  waveCount: 3
+  waveHeight: 1
+  affectCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.04032184
+      outSlope: -0.04032184
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.39276809
+      value: 0.98416287
+      inSlope: -1.0523987
+      outSlope: -1.0523987
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.09469696
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.026080864
+      outSlope: 0.026080864
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1317894749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16579,7 +16632,6 @@ MonoBehaviour:
   player: {fileID: 685824659}
   shoot: {fileID: 1317894747}
   gunshoot: {fileID: 305450405255617707}
-  reloadingpistol: {fileID: 3768218852580645403}
   playermove: {fileID: 4211081547711046413}
   muzzleflash: {fileID: 1346755926136663446}
   isGrapple: 0
