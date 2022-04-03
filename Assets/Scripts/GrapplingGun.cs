@@ -17,6 +17,7 @@ public class GrapplingGun : MonoBehaviour
 
 
     public PlayerMovement playermove;
+    
 
 
 
@@ -31,7 +32,7 @@ public class GrapplingGun : MonoBehaviour
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInParent<Animator>();
         shoot = GetComponent<AudioSource>();
         isGrapple = false;
        
@@ -68,6 +69,7 @@ public class GrapplingGun : MonoBehaviour
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable))
         {
             isGrapple = true;
+            anim.SetTrigger("GrappleShoot");
             shoot.Play();
             muzzleflash.Play();
             grapplePoint = hit.point;
