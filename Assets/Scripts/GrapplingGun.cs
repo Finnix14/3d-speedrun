@@ -27,7 +27,7 @@ public class GrapplingGun : MonoBehaviour
     public bool isGrapple;
 
     public Rigidbody playerRig;
-    public Animator anim;
+    private Animator anim;
 
     void Awake()
     {
