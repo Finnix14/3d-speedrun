@@ -4,31 +4,24 @@ using System.Collections.Generic;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float health = 10;
-    [SerializeField] Rigidbody enemyrig;
-    public float launchForce;
-
-    public Animator enemyAnim;
-
-    public AudioSource hitnoise;
-
+    public GameObject ragdoll;
 
     public void TakeDamage(float dmgAmount)
     {
         health -= dmgAmount;
         if (health <= 0f)
         {
-            StartCoroutine("EnemyDie");
-                return;
+            Die();
         }
     }
 
-
-
-    public IEnumerator EnemyDie()
+    void Die()
     {
-        hitnoise.Play();
-        enemyrig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
-        yield return new WaitForSeconds(3f);
+
+        ragdoll = Instantiate(ragdoll, transform.position, transform.rotation);
+
         Destroy(gameObject);
     }
+
+
 }

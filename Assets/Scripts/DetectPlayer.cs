@@ -12,8 +12,10 @@ public class DetectPlayer : MonoBehaviour
     public GameObject bullet;
 
     public float shootSpeed = 10f;
-    public float timeToShoot = 1.3f;
+    public float timeToShoot = 2f;
     float originalTime;
+
+    public Animator anim;
     void Start()
     {
         originalTime = timeToShoot;
@@ -34,7 +36,7 @@ public class DetectPlayer : MonoBehaviour
             timeToShoot -= Time.deltaTime;
             if (timeToShoot < 0)
             {
-                ShootPlayer();
+                StartCoroutine("Shoot");
                 timeToShoot = originalTime;
             }
         }
@@ -50,8 +52,11 @@ public class DetectPlayer : MonoBehaviour
         }
     }
 
-    private void ShootPlayer()
+    public IEnumerator Shoot()
     {
+        anim.SetTrigger("ShootingPlayer");
+        yield return new WaitForSeconds(2);
+
         GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody rig = currentBullet.GetComponent<Rigidbody>();
 

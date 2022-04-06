@@ -25,7 +25,6 @@ public class Pistol : MonoBehaviour
     [SerializeField] int range = 100;
     [SerializeField] Camera fpsCam;
 
-
     void Start()
     {
         currentAmmo = maxAmmo;
@@ -95,6 +94,7 @@ public class Pistol : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.TakeDamage(damage);
+                    
                 }
 
             }
