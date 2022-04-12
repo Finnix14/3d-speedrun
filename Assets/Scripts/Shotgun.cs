@@ -28,7 +28,7 @@ public class Shotgun : MonoBehaviour
     public Animator animator;
 
     public GameObject weaponUI;
-    public GunCollectable gunthrow;
+    public ShotGunCollectable gunthrow;
 
     [SerializeField] int damage = 100;
     [SerializeField] int range = 100;
