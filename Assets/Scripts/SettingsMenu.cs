@@ -9,15 +9,12 @@ public class SettingsMenu : MonoBehaviour
 {
 
     public AudioMixer theMixer;
-    public GameObject settingsmenu;
-    public GameObject mainmenu;
     public static bool settingsEnabled;
-    public GameObject videop;
 
-    public Toggle fullscreenTog, vsyncTog;
-    public TMP_Text resolutionLabel;
 
-    public List<ResItem> resolutions = new List<ResItem>();
+    public Toggle fullscreenTog;
+    
+   
     private int selectedResolution;
 
     public TMP_Text mastLabel, musicLabel, sfxLabel;
@@ -26,43 +23,10 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
-        settingsmenu.SetActive(false);
+
 
         fullscreenTog.isOn = Screen.fullScreen;
 
-        if (QualitySettings.vSyncCount == 0)
-        {
-            vsyncTog.isOn = false;
-        }
-        else
-        {
-            vsyncTog.isOn = true;
-        }
-
-        bool foundRes = false;
-        for(int i = 0; i < resolutions.Count; i++)
-        {
-            if (Screen.width == resolutions[i].horizontal && Screen.height == resolutions[1].vertical)
-            {
-                foundRes = true;
-
-                selectedResolution = i;
-
-                UpdateResLabel();
-            }
-
-        }
-        if (!foundRes)
-        {
-            ResItem newRes = new ResItem();
-            newRes.horizontal = Screen.width;
-            newRes.vertical = Screen.height;
-
-            resolutions.Add(newRes);
-            selectedResolution = resolutions.Count - 1;
-
-            UpdateResLabel();
-        }
 
         float vol = 0f;
         theMixer.GetFloat("MasterVol", out vol);
@@ -87,53 +51,7 @@ public class SettingsMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void BackToPauseMenu()
-    {
-        settingsmenu.SetActive(false);
-        mainmenu.SetActive(true);
-        settingsEnabled = false;
-    }
 
-    public void ResLeft()
-    {
-        selectedResolution--;
-        if(selectedResolution < 0)
-        {
-            selectedResolution = 0;
-        }
-        UpdateResLabel();
-    }
-
-    public void ResRight()
-    {
-        selectedResolution++;
-        if(selectedResolution > resolutions.Count - 1)
-        {
-            selectedResolution = resolutions.Count - 1;
-        }
-        UpdateResLabel();
-    }
-
-    public void UpdateResLabel()
-    {
-        resolutionLabel.text = resolutions[selectedResolution].horizontal.ToString() + " x " + resolutions[selectedResolution].vertical.ToString();
-    }
-    
-    
-    public void ApplyGraphics()
-    {
-        //Screen.fullScreen = fullscreenTog.isOn;
-
-        if (vsyncTog.isOn)
-        {
-            QualitySettings.vSyncCount = 1;
-        }
-        else
-        {
-            QualitySettings.vSyncCount = 0;
-        }
-        Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullscreenTog.isOn);
-    }
     public void SetMasterVolume()
     {
         mastLabel.text = Mathf.RoundToInt(masterSlider.value + 80).ToString();
