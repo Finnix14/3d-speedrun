@@ -7,7 +7,7 @@ public class TruckMovement : MonoBehaviour
     public float movementSpeed;
     void Start()
     {
-        movementSpeed = Random.Range(movementSpeed, movementSpeed + 10);
+        movementSpeed = Random.Range(movementSpeed, movementSpeed + 20);
         this.transform.GetChild(0).gameObject.GetComponent<Rigidbody>().drag = Random.Range(.1f, 1f);
     }
 
