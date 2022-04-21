@@ -10,6 +10,8 @@ TagManager:
   - DeathPlane
   - Finish Line
   - Start Line
+  - Water
+  - Truck
   layers:
   - Default
   - TransparentFX

@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1389ba7875371c54c88d5755f01daa25, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 88b346c2df7b6144e8a39f0eb6370f17, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -63016,9 +63016,9 @@ MonoBehaviour:
   player: {fileID: 8438836973946545411}
   maxAmmo: 8
   currentAmmo: 0
-  reloadTime: 1
+  weaponUI: {fileID: 0}
+  gunthrow: {fileID: 0}
   animator: {fileID: 436722058328744048}
-  reload: {fileID: 5134870982365318328}
   damage: 25
   range: 100
   fpsCam: {fileID: 5722951285841293650}
