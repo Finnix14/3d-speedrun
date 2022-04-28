@@ -164,14 +164,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        MovePlayer(moveDirection);
     }
 
-    void MovePlayer()
+    public void MovePlayer(Vector3 direction)
     {
         if (isGrounded && !OnSlope())
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            rb.AddForce(moveDirection * moveSpeed * movementMultiplier, ForceMode.Acceleration);
             
         }
         else if (isGrounded && OnSlope())
@@ -180,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (!isGrounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+            rb.AddForce(moveDirection * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
         }
     }
 

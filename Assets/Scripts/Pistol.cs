@@ -16,7 +16,7 @@ public class Pistol : MonoBehaviour
 
 
     public GameObject weaponUI;
-    public RevolverThrow gunthrow;
+
 
     public Animator animator;
     
@@ -38,7 +38,7 @@ public class Pistol : MonoBehaviour
 
         if (currentAmmo <= 0)
         {
-            gunthrow.Drop();
+           
             weaponUI.SetActive(false);
             return;
         }
