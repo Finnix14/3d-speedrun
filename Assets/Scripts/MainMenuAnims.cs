@@ -37,4 +37,8 @@ public class MainMenuAnims : MonoBehaviour
     {
         SceneManager.LoadScene("Level 2");
     }
+    public void Level3()
+    {
+        SceneManager.LoadScene("Level 3");
+    }
 }
