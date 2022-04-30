@@ -15691,7 +15691,7 @@ MonoBehaviour:
   playerUI: {fileID: 2133800370447256552}
   timer: {fileID: 1506905180}
   player: {fileID: 4211081547711046413}
-  deathplane: {fileID: 0}
+  deathplane: {fileID: 1445658550}
   camsense: {fileID: 685824667}
   slowmomusic: {fileID: 724278954}
   slowmoSFX: {fileID: 4211081547711046411}
