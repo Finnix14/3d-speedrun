@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: e1ec0e2320d2d4fb9a393769378ce0a1, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e11f5b66aad75483b8cd16ee18a0c917, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -10842,13 +10842,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380217267}
-  m_LocalRotation: {x: 0.3233727, y: 0.15859891, z: 0.27209616, w: 0.89232296}
-  m_LocalPosition: {x: -92.8, y: 141.6, z: -68.6}
+  m_LocalRotation: {x: 0.40763658, y: 0.18235943, z: 0.25496808, w: 0.8576531}
+  m_LocalPosition: {x: -124.9, y: 201.4, z: 19.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 29.393, y: 31.792, z: 42.459}
+  m_LocalEulerAnglesHint: {x: 37.317, y: 40.896, z: 47.465}
 --- !u!1 &380652359
 GameObject:
   m_ObjectHideFlags: 0
@@ -47197,7 +47197,7 @@ MonoBehaviour:
   fov: 90
   wallRunfov: 100
   wallRunfovTime: 20
-  camTilt: 20
+  camTilt: 10
   camTiltTime: 20
   jumping: {fileID: 8438836973580161522}
 --- !u!33 &5722951284521805925
