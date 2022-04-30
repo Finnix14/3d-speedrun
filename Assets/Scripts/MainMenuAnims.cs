@@ -41,4 +41,14 @@ public class MainMenuAnims : MonoBehaviour
     {
         SceneManager.LoadScene("Level 3");
     }
+
+    public void SecretRoom()
+    {
+        anim.SetTrigger("Secret");
+    }
+
+    public void SecretRoomBack()
+    {
+        anim.SetTrigger("SecretBack");
+    }
 }
