@@ -102,6 +102,11 @@ public class PlayerMovement : MonoBehaviour
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
 
+        
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
 
     }
 
@@ -208,9 +213,4 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void ReloadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-    }
 }
