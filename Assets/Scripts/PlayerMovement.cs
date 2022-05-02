@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float checkOffset = 1f;
     [SerializeField] private float checkRadius = 2f;
-    
+
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject nextlevelUI;
 
-  
+
 
     private bool OnSlope()
     {
@@ -82,8 +82,8 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         rb.freezeRotation = true;
         nextlevelUI.SetActive(false);
-        
-      
+
+
     }
 
     private void Update()
@@ -93,10 +93,10 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         ControlDrag();
         ControlSpeed();
-    
+
         if (Input.GetKeyDown(jumpKey) && isGrounded)
         {
-          
+
             Jump();
         }
 
@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
         moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
     }
-   
+
     void Jump()
     {
         if (isGrounded)
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             jumping.Play();
-           
+
         }
     }
 
@@ -128,15 +128,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(sprintKey) && isGrounded)
         {
-            
+
             if (isGrounded)
             {
                 anim.SetBool("sprint", true);
-                
+
             }
-            
+
             moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
-            
+
         }
         else
         {
@@ -145,11 +145,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("sprint", false);
             }
-            
+
         }
     }
 
-  
+
     void ControlDrag()
     {
         if (isGrounded)
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && !OnSlope())
         {
             rb.AddForce(moveDirection * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-            
+
         }
         else if (isGrounded && OnSlope())
         {
@@ -185,8 +185,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col)
-    { 
-            
+    {
+
 
         if (col.gameObject.CompareTag("Finish Line"))
             StopWatch();
@@ -196,7 +196,7 @@ public class PlayerMovement : MonoBehaviour
             StartStopWatch();
         }
     }
- 
+
 
     void StopWatch()
     {
@@ -207,10 +207,10 @@ public class PlayerMovement : MonoBehaviour
         timer.StartCoroutine("StopWatch");
     }
 
-    
+
     void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
+
     }
 }
