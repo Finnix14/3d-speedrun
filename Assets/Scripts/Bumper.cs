@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bumper : MonoBehaviour
 {
     [SerializeField] string playerTag;
+    [SerializeField] string truck;
     [SerializeField] float bounceForce;
 
     public Animator anim;
@@ -15,7 +16,7 @@ public class Bumper : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == playerTag)
+        if(collision.transform.tag == playerTag || collision.transform.tag == truck)
         {
             anim.SetTrigger("doesCollide");
             bounceclouds.Play();
