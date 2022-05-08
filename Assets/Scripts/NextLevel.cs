@@ -17,4 +17,8 @@ public class NextLevel : MonoBehaviour
     {
         SceneManager.LoadScene("Level 3");
     }
+    public void CutScene()
+    {
+        SceneManager.LoadScene("Congratulations");
+    }
 }

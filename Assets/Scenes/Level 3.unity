@@ -22854,7 +22854,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 586659566}
         m_TargetAssemblyTypeName: NextLevel, Assembly-CSharp
-        m_MethodName: Level1
+        m_MethodName: CutScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
