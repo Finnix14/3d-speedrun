@@ -51,4 +51,8 @@ public class MainMenuAnims : MonoBehaviour
     {
         anim.SetTrigger("SecretBack");
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("PrototypeMainMenu");
+    }
 }

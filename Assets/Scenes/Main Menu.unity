@@ -589,19 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theMixer: {fileID: 24100000, guid: 359bd1e7a4477d34c89b8227260255ce, type: 2}
-  settingsmenu: {fileID: 1917929353}
-  mainmenu: {fileID: 2020482504}
-  videop: {fileID: 0}
   fullscreenTog: {fileID: 381114474}
-  vsyncTog: {fileID: 1366647563}
-  resolutionLabel: {fileID: 1989326495}
-  resolutions:
-  - horizontal: 1920
-    vertical: 1080
-  - horizontal: 2560
-    vertical: 1440
-  - horizontal: 3840
-    vertical: 2160
   mastLabel: {fileID: 275208338}
   musicLabel: {fileID: 1804085867}
   sfxLabel: {fileID: 976572288}

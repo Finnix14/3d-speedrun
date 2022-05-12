@@ -13,8 +13,8 @@ public class SettingsMenu : MonoBehaviour
 
 
     public Toggle fullscreenTog;
-    
-   
+    public List<ResItem> resolutions = new List<ResItem>();
+
     private int selectedResolution;
 
     public TMP_Text mastLabel, musicLabel, sfxLabel;
@@ -75,6 +75,12 @@ public class SettingsMenu : MonoBehaviour
         theMixer.SetFloat("SFXVol", sfxSlider.value);
 
         PlayerPrefs.SetFloat("SFXVol", sfxSlider.value);
+    }
+    public void ApplyGraphics()
+    {
+        Screen.fullScreen = fullscreenTog.isOn;
+
+       // Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, fullscreenTog.isOn);
     }
 
 }
