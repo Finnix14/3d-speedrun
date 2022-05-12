@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 3
+  m_CurrentQuality: 2
   m_QualitySettings:
   - serializedVersion: 2
     name: Very Low
@@ -77,7 +77,8 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - WebGL
   - serializedVersion: 2
     name: Medium
     pixelLightCount: 1
@@ -93,7 +94,7 @@ QualitySettings:
     skinWeights: 2
     textureQuality: 0
     anisotropicTextures: 1
-    antiAliasing: 0
+    antiAliasing: 2
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
@@ -113,7 +114,8 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - WebGL
   - serializedVersion: 2
     name: High
     pixelLightCount: 2
@@ -149,7 +151,8 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: 29f80e603cb4e174ca63ae73318a58be, type: 2}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - WebGL
   m_PerPlatformDefaultQuality:
     Android: 2
     Lumin: 3
@@ -159,7 +162,7 @@ QualitySettings:
     PSP2: 2
     Stadia: 3
     Standalone: 1
-    WebGL: 3
+    WebGL: 0
     Windows Store Apps: 3
     XboxOne: 3
     iPhone: 2
