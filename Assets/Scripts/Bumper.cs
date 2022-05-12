@@ -10,6 +10,7 @@ public class Bumper : MonoBehaviour
 
     public Animator anim;
     public ParticleSystem bounceclouds;
+
     void Start()
     {
         anim = GetComponent<Animator>();  
