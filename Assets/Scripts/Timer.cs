@@ -16,9 +16,6 @@ public class Timer : MonoBehaviour
         Time.timeScale = 1;
     }
 
- 
-
-
 
     IEnumerator StopWatch()
     {

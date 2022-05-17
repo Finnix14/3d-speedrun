@@ -12,11 +12,12 @@ public class Death : MonoBehaviour
     public PlayerLook camsense;
     public AudioSource slowmomusic;
     public AudioSource slowmoSFX;
-
+    public bool hasWon = false;
 
     private void Start()
     {
         deathplane.SetActive(false);
+  
     }
 
 

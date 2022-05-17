@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
 
     public static bool isPaused;
     public static bool isMenu;
+
+    public PlayerMovement playerM;
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -43,6 +45,7 @@ public class PauseMenu : MonoBehaviour
     {
         if(Time.timeScale == 1)
         {
+            playerM = null;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             pauseMenu.SetActive(true);

@@ -50,11 +50,11 @@ public class Slide : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && player.isGrounded)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && player.isGrounded)
             Sliding();
 
 
-        else if (Input.GetKeyUp(KeyCode.C) && isSliding)
+        else if (Input.GetKeyUp(KeyCode.LeftShift) && isSliding)
             GoUp();
 
         currentStamina += Time.deltaTime;

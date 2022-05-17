@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject nextlevelUI;
 
+    public bool isPaused = false;
 
 
     private bool OnSlope()
@@ -82,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         rb.freezeRotation = true;
         nextlevelUI.SetActive(false);
-
+        Time.timeScale = 1f;
 
     }
 
@@ -103,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
 
         
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale == 1)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
@@ -120,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (isGrounded)
+        if (isGrounded && !PauseMenu.isPaused)
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
@@ -131,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ControlSpeed()
     {
-        if (Input.GetKey(sprintKey) && isGrounded)
+        if (Input.GetKey(sprintKey) && isGrounded && !PauseMenu.isPaused)
         {
 
             if (isGrounded)
