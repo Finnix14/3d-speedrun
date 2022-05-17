@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     float playerHeight = 2f;
     public Timer timer;
+    public GameObject startLine;
 
     [SerializeField] Transform orientation;
 
@@ -123,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded && Time.timeScale == 1)
         {
-            Debug.Log(Time.timeScale);
+         
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             jumping.Play();
@@ -200,7 +201,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (col.gameObject.CompareTag("Start Line"))
         {
+            
             StartStopWatch();
+            Destroy(startLine, .1f);
         }
     }
 

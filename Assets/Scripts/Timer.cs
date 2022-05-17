@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
 
     IEnumerator StopWatch()
     {
-        while (true)
+        while (true && Time.timeScale == 1)
         {
             time += Time.deltaTime;
             msec = (int)((time - (int)time) * 100);
