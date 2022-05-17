@@ -20112,7 +20112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1493831989}
   canvasdisable: {fileID: 1493831989}
-  playerM: {fileID: 1650748170}
 --- !u!114 &586659566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41565,7 +41564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
+  m_sendNavigationEvents: 0
   m_DragThreshold: 10
 --- !u!4 &1463045827
 Transform:

@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Keybinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
-    [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
+    [SerializeField] KeyCode sprintKey = KeyCode.W;
 
     [Header("Drag")]
     [SerializeField] float groundDrag = 7f;
@@ -121,8 +121,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (isGrounded && !PauseMenu.isPaused)
+        if (isGrounded && Time.timeScale == 1)
         {
+            Debug.Log(Time.timeScale);
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             jumping.Play();
