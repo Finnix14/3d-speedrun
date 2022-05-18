@@ -80,17 +80,6 @@ public class Shotgun : MonoBehaviour
         muzzleflash.Play();
         shoot.Play();
         playerRig.AddForce(Camera.main.transform.forward * launchForce, ForceMode.VelocityChange);
-        RaycastHit hitInfo;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitInfo, range))
-        {
-
-            Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
-        }
-
     }
 
 

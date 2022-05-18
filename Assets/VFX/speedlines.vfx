@@ -34,7 +34,7 @@ MonoBehaviour:
     x: 477
     y: -190
     width: 913
-    height: 2099
+    height: 2079
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
