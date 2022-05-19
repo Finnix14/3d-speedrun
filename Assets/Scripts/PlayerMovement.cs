@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isPaused = false;
 
-
+    private bool hasStarted;
     private bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight / 2 + 0.5f))
@@ -199,9 +199,9 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Finish Line"))
             StopWatch();
 
-        if (col.gameObject.CompareTag("Start Line"))
+        if (col.gameObject.CompareTag("Start Line") && hasStarted == false)
         {
-            
+            hasStarted = true;
             StartStopWatch();
             Destroy(startLine, .1f);
         }
