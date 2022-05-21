@@ -31,7 +31,9 @@ public class FinishLevel : MonoBehaviour
             Time.timeScale = .7f;
            
             player.moveSpeed = 0;
-
+            player.sprintSpeed = 0;
+            player.jumpForce = 0;
+            
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             slowmomusic.pitch = Time.timeScale;

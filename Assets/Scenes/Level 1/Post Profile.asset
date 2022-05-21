@@ -38,7 +38,7 @@ MonoBehaviour:
     m_Value: 0
     min: -100
     max: 100
---- !u!114 &-5225209757740013100
+--- !u!114 &-7423200671322573824
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,12 +60,12 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.805
     min: 0
     max: 1
   clamp:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.0554
     min: 0
     max: 0.2
 --- !u!114 &11400000
@@ -81,9 +81,9 @@ MonoBehaviour:
   m_Name: Post Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -5225209757740013100}
   - {fileID: 7041213800675807563}
   - {fileID: -8310957120226841576}
+  - {fileID: -7423200671322573824}
 --- !u!114 &7041213800675807563
 MonoBehaviour:
   m_ObjectHideFlags: 3

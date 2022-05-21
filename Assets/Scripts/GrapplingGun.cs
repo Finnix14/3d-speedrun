@@ -8,7 +8,7 @@ public class GrapplingGun : MonoBehaviour
     private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
 
-    public Transform gunTip, camera, player;
+    public Transform gunTip, cam, player;
 
     private float maxDistance = 20f;
     private SpringJoint joint;
@@ -66,7 +66,7 @@ public class GrapplingGun : MonoBehaviour
     {
         RaycastHit hit;
         shootGrapple();
-        if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable))
+        if (Physics.Raycast(cam.position, cam.forward, out hit, maxDistance, whatIsGrappleable))
         {
             isGrapple = true;
             anim.SetTrigger("GrappleShoot");

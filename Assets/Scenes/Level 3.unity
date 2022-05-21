@@ -2425,17 +2425,17 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.7725491, b: 0.62352943, a: 0.5019608}
-  deepColor: {r: 0.01176471, g: 0.28624168, b: 0.50980073, a: 1}
+  deepColor: {r: 0.01176471, g: 0.28624108, b: 0.50980073, a: 1}
   colorDepth: 0.8
-  horizonColor: {r: 0, g: 0.22741818, b: 0.8, a: 1}
+  horizonColor: {r: 0, g: 0.22741759, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30192798, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30192736, a: 0}
   shoreStrength: 0
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20389047, g: 0.30977106, b: 0.517647, a: 1}
+  underwaterColor: {r: 0.2038899, g: 0.30977046, b: 0.517647, a: 1}
   underwaterColorStrength: 1
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -12435,7 +12435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: V1.0
+  m_text: V1.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -52084,6 +52084,7 @@ MonoBehaviour:
   staminaBar: {fileID: 3540318458239122403}
   staminaValue: 0
   slideSpeed: 5
+  isSliding: 0
   stamina: 0
 --- !u!136 &5722951284521805921
 CapsuleCollider:

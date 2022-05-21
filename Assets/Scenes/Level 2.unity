@@ -15980,6 +15980,7 @@ MonoBehaviour:
   staminaBar: {fileID: 3612500959004737900}
   staminaValue: 0
   slideSpeed: 5
+  isSliding: 0
   stamina: 0
 --- !u!114 &685824666
 MonoBehaviour:
@@ -22411,17 +22412,17 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.7725491, b: 0.62352943, a: 0.5019608}
-  deepColor: {r: 0.01176471, g: 0.28624168, b: 0.50980073, a: 1}
+  deepColor: {r: 0.01176471, g: 0.28624108, b: 0.50980073, a: 1}
   colorDepth: 0.8
-  horizonColor: {r: 0, g: 0.22741818, b: 0.8, a: 1}
+  horizonColor: {r: 0, g: 0.22741759, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30192798, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30192736, a: 0}
   shoreStrength: 0
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20389047, g: 0.30977106, b: 0.517647, a: 1}
+  underwaterColor: {r: 0.2038899, g: 0.30977046, b: 0.517647, a: 1}
   underwaterColorStrength: 1
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -24716,7 +24717,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gunTip: {fileID: 694338046}
-  camera: {fileID: 703526480}
+  cam: {fileID: 703526480}
   player: {fileID: 685824659}
   shoot: {fileID: 1317894747}
   gunshoot: {fileID: 305450405255617707}
@@ -32634,7 +32635,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: V1.0
+  m_text: V1.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -59531,11 +59532,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843529565930958758, guid: d30f34e888218f148a8d612b7825ab80, type: 3}
       propertyPath: m_Size.x
-      value: 2.8211575
+      value: 5.946301
       objectReference: {fileID: 0}
     - target: {fileID: 7843529565930958758, guid: d30f34e888218f148a8d612b7825ab80, type: 3}
       propertyPath: m_Size.y
-      value: 4.1722665
+      value: 18.54499
       objectReference: {fileID: 0}
     - target: {fileID: 7843529565930958758, guid: d30f34e888218f148a8d612b7825ab80, type: 3}
       propertyPath: m_Size.z
@@ -59543,15 +59544,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843529565930958758, guid: d30f34e888218f148a8d612b7825ab80, type: 3}
       propertyPath: m_Center.x
-      value: 0.88644165
+      value: 2.3845897
       objectReference: {fileID: 0}
     - target: {fileID: 7843529565930958758, guid: d30f34e888218f148a8d612b7825ab80, type: 3}
       propertyPath: m_Center.y
-      value: 0.2566801
+      value: 0.73100513
       objectReference: {fileID: 0}
     - target: {fileID: 7843529565930958758, guid: d30f34e888218f148a8d612b7825ab80, type: 3}
       propertyPath: m_Center.z
-      value: 1.02048
+      value: 1.0205089
       objectReference: {fileID: 0}
     - target: {fileID: 7843529565930958760, guid: d30f34e888218f148a8d612b7825ab80, type: 3}
       propertyPath: player

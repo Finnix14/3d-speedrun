@@ -23,7 +23,7 @@ public class Slide : MonoBehaviour
 
 
     int staminaCount;
-    bool isSliding;
+    public bool isSliding;
 
 
     public float stamina;

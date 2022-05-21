@@ -44,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundMask;
     [SerializeField] float groundDistance = 0.2f;
+
+    public PlayerLook look;
+    public Slide sliding;
     public bool isGrounded { get; private set; }
 
     Vector3 moveDirection;
@@ -85,7 +88,8 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
         nextlevelUI.SetActive(false);
         Time.timeScale = 1f;
-
+        look = GetComponent<PlayerLook>();
+        sliding = GetComponent<Slide>();
     }
 
     private void Update()
@@ -211,6 +215,11 @@ public class PlayerMovement : MonoBehaviour
     void StopWatch()
     {
         timer.StopCoroutine("StopWatch");
+        this.enabled = false;
+        sliding.enabled = false;
+        look.enabled = false;
+        
+
     }
     void StartStopWatch()
     {
